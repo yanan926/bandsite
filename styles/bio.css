@@ -41,7 +41,7 @@ body {
   color: #323232;
 }
 
-.font-desktop-section-header, .gallery h2, .bio h2 {
+.font-desktop-section-header, .footer h2, .gallery h2, .bio h2 {
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
@@ -175,4 +175,17 @@ body {
   padding: 0 1.5rem 1.5rem 0;
   width: 33.3%;
   box-sizing: border-box;
+}
+
+.footer {
+  background-color: #323232;
+  padding-left: 5rem;
+}
+.footer h2 {
+  padding: 3rem 2.25rem 2.25rem 0;
+  margin: 0;
+  color: #FFFFFF;
+}
+.footer__social-icons-container {
+  display: flex;
 }/*# sourceMappingURL=bio.css.map */

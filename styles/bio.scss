@@ -191,7 +191,7 @@ body {
     margin: 0;
   }
   &__container {
-    padding:0 2.5rem 3rem 5rem;
+    padding: 0 2.5rem 3rem 5rem;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
@@ -199,6 +199,22 @@ body {
       padding: 0 1.5rem 1.5rem 0;
       width: 33.3%;
       box-sizing: border-box;
+    }
+  }
+}
+.footer {
+  background-color: $color-text-primary-black;
+  padding-left: 5rem;
+  h2 {
+    @extend .font-desktop-section-header;
+    padding: 3rem 2.25rem 2.25rem 0;
+    margin: 0;
+    color: $color-text-primary-white;
+  }
+  &__social-icons-container {
+    display: flex;
+    .footer__social--icon {
+      
     }
   }
 }
