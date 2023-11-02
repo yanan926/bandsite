@@ -41,7 +41,7 @@ body {
   color: #323232;
 }
 
-.font-desktop-section-header, .footer h2, .gallery h2, .bio h2 {
+.font-desktop-section-header, .footer__title-container h2, .gallery h2, .bio h2 {
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
@@ -62,17 +62,16 @@ body {
   color: #323232;
 }
 
-.font-desktop-footer-copy, .main-nav__item {
+.font-desktop-footer-copy, .footer__photographer--email, .footer__photographer--address, .footer__copy-right, .main-nav__item {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
 }
 
-.font-desktop-labels-buttons, .bio h4 {
+.font-desktop-labels-buttons, .footer__photographer--name, .bio h4 {
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
-  color: #323232;
 }
 
 .main-nav {
@@ -178,14 +177,56 @@ body {
 }
 
 .footer {
+  color: #E1E1E1;
   background-color: #323232;
-  padding-left: 5rem;
+  padding: 0 4rem 0 5rem;
 }
-.footer h2 {
+.footer__title-container {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.footer__title-container h2 {
+  color: #E1E1E1;
   padding: 3rem 2.25rem 2.25rem 0;
   margin: 0;
-  color: #FFFFFF;
 }
 .footer__social-icons-container {
   display: flex;
+}
+.footer__social-icons-container .footer__social--icon {
+  padding: 0 1.125rem;
+}
+.footer__logo {
+  position: absolute;
+  right: 0;
+}
+.footer__copy-right {
+  padding-bottom: 2.25rem;
+}
+
+.footer__photographers-container {
+  display: flex;
+}
+
+.footer__photographer {
+  padding-right: 2.25rem;
+  color: #E1E1E1;
+}
+.footer__photographer p {
+  margin: 0;
+}
+.footer__photographer--name {
+  padding-bottom: 2.25rem;
+}
+.footer__photographer--address {
+  padding-bottom: 2.25rem;
+}
+.footer__photographer a, .footer__photographer a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.footer__photographer--email {
+  padding-bottom: 2.25rem;
+  display: block;
 }/*# sourceMappingURL=bio.css.map */

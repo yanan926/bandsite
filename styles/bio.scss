@@ -84,7 +84,6 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
-  color: $color-text-primary-black;
 }
 
 .main-nav {
@@ -203,18 +202,70 @@ body {
   }
 }
 .footer {
+  color: $color-text-secondary-mercury;
   background-color: $color-text-primary-black;
-  padding-left: 5rem;
-  h2 {
-    @extend .font-desktop-section-header;
-    padding: 3rem 2.25rem 2.25rem 0;
-    margin: 0;
-    color: $color-text-primary-white;
+  padding: 0 4rem 0 5rem;
+  &__title-container {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+
+    h2 {
+      color: $color-text-secondary-mercury;
+      @extend .font-desktop-section-header;
+      padding: 3rem 2.25rem 2.25rem 0;
+      margin: 0;
+    }
   }
+
   &__social-icons-container {
     display: flex;
     .footer__social--icon {
-      
+      padding: 0 1.125rem;
     }
   }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+  }
+
+  &__copy-right {
+    @extend .font-desktop-footer-copy;
+    padding-bottom: 2.25rem;
+  }
+}
+
+.footer__photographers-container{
+  display: flex;
+}
+
+.footer__photographer {
+  padding-right: 2.25rem;
+  color: $color-text-secondary-mercury;
+  p {
+    margin: 0;
+  }
+  &--name {
+    @extend .font-desktop-labels-buttons;
+    padding-bottom: 2.25rem;
+  }
+  &--address {
+    @extend .font-desktop-footer-copy;
+    padding-bottom: 2.25rem;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+    color:inherit;
+  }
+
+   &--email {
+    @extend .font-desktop-footer-copy;
+    padding-bottom: 2.25rem; 
+    display: block;
+  }
+  
+
+
 }
