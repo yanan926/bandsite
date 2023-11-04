@@ -121,7 +121,7 @@
   background-color: $color-text-primary-black;
   display: flex;
   @include mobile {
-    @include font-mobile-sub-header();
+    @include font-mobile-body-copy();
     flex-direction: column;
     align-items: center;
     justify-content: center;
