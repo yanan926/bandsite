@@ -28,24 +28,14 @@
   font-style: normal;
 }
 
-body {
+* {
+  box-sizing: border-box;
   font-family: "Avenir Next";
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
-.demi {
-  font-family: "Avenir Next";
-  font-weight: 600;
-}
-
-.bold {
-  font-family: "Avenir Next";
-  font-weight: 700;
-}
-
-.font-desktop-page-header {
+@mixin font-desktop-page-header() {
   font-size: 60px;
   line-height: 68px;
   font-weight: 700;
@@ -53,35 +43,76 @@ body {
   color: $color-text-primary-black;
 }
 
-.font-desktop-section-header {
+@mixin font-desktop-section-header() {
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
   color: $color-text-primary-black;
 }
 
-.font-desktop-sub-header {
+@mixin font-desktop-sub-header() {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
   color: $color-text-primary-black;
 }
 
-.font-desktop-body-copy {
+@mixin font-desktop-body-copy() {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
   color: $color-text-primary-black;
 }
 
-.font-desktop-footer-copy {
+@mixin font-desktop-footer-copy() {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
 }
 
-.font-desktop-labels-buttons {
+@mixin font-desktop-labels-buttons() {
   font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+@mixin font-mobile-page-header() {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-text-primary-black;
+}
+
+@mixin font-mobile-section-header() {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: $color-text-primary-black;
+}
+
+@mixin font-mobile-sub-header {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: $color-text-primary-black;
+}
+
+@mixin font-mobile-body-copy() {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $color-text-primary-black;
+}
+
+@mixin font-mobile-footer-copy() {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@mixin font-mobile-labels-buttons() {
+  font-size: 10px;
   line-height: 20px;
   font-weight: 700;
 }
@@ -89,8 +120,29 @@ body {
 .main-nav {
   background-color: $color-text-primary-black;
   display: flex;
-  align-items: center;
-  padding: 1rem 4rem;
+  @include mobile {
+    @include font-mobile-sub-header();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+  }
+
+  @include tablet {
+    @include font-desktop-labels-buttons();
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  @include desktop {
+    @include font-desktop-labels-buttons();
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 6rem;
+  }
 
   img {
     max-height: 1.25rem;
@@ -99,15 +151,41 @@ body {
   &__list {
     list-style: none;
     display: flex;
+    margin: 0;
     padding: 0;
+    flex-basis: 1;
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: auto;
+    }
   }
 
   &__item {
-    @extend .font-desktop-footer-copy;
-    padding: 0 1rem;
+    &:hover {
+      border-bottom: 3px solid #fff;
+      font-weight: bold;
+    }
     a {
       color: $color-text-secondary-mercury;
+      &:hover {
+        color: $color-text-primary-white;
+      }
       text-decoration: none;
+    }
+    @include mobile {
+      text-align: center;
+      width: 50%;
+      padding: 1rem 0;
+      margin: 0;
+    }
+
+    @include tablet {
+      text-align: start;
+      width: auto;
+      padding: 2rem 0;
+      margin: 0 1rem;
     }
   }
 }
@@ -115,7 +193,18 @@ body {
 .hero {
   background: url(../assets/Images/hero-bio.jpg) top;
   background-size: cover;
-  height: 34rem;
+  @include mobile {
+    height: 16rem;
+  }
+
+  @include tablet {
+    height: 32rem;
+  }
+
+  @include desktop {
+    height: 34rem;
+  }
+
   position: relative;
   &__overlay {
     position: absolute;
@@ -130,43 +219,94 @@ body {
     z-index: 1;
   }
   h1 {
-    @extend .font-desktop-page-header;
-    padding: 0 5rem;
-    color: #ffffff;
     opacity: 100%;
     z-index: 2;
     position: absolute;
     bottom: 50%;
     transform: translateY(50%);
+    @include mobile {
+      @include font-mobile-page-header();
+      padding: 0 1rem;
+      color: #ffffff;
+    }
+    @include tablet {
+      @include font-desktop-page-header();
+      padding: 0 3rem;
+      color: #ffffff;
+    }
+    @include desktop {
+      @include font-desktop-page-header();
+      padding: 0 5rem;
+      color: #ffffff;
+    }
   }
 }
 
 .bio {
   h2 {
-    @extend .font-desktop-section-header;
-    padding: 3rem 2.25rem 2.25rem 5rem;
     margin: 0;
+    @include mobile {
+      @include font-mobile-section-header();
+      padding-bottom: 1rem;
+      padding: 1.5rem 1rem 1rem 1rem;
+    }
+    @include tablet {
+      @include font-desktop-section-header();
+      padding-bottom: 2.25rem;
+      padding: 3rem 2.25rem 2.25rem 4rem;
+    }
+
+    @include desktop {
+      @include font-desktop-section-header();
+      padding-bottom: 2.25rem;
+      padding: 3rem 2.25rem 2.25rem 8rem;
+    }
   }
 
   &__img {
-    width: 70%;
-    margin: auto;
-    display: block;
-    padding-bottom: 2.25rem;
+    @include mobile {
+      padding-bottom: 1rem;
+      width: 90%;
+      margin: auto;
+      display: block;
+    }
+    @include tablet {
+      padding-bottom: 2.25rem;
+      width: 70%;
+      margin: auto;
+      display: block;
+    }
   }
 
   h3 {
-    @extend .font-desktop-sub-header;
-    width: 70%;
-    padding-bottom: 2.25rem;
-    margin: 0 auto;
+    @include mobile {
+      width: 90%;
+      margin: 0 auto;
+      @include font-mobile-sub-header();
+      padding-bottom: 1rem;
+    }
+    @include tablet {
+      width: 70%;
+      margin: 0 auto;
+      @include font-desktop-sub-header();
+      padding-bottom: 2.25rem;
+    }
   }
 
   h4 {
-    @extend .font-desktop-labels-buttons;
-    width: 70%;
-    padding-bottom: 3rem;
-    margin: 0 auto;
+    @include mobile {
+      @include font-mobile-labels-buttons();
+      width: 90%;
+      padding-bottom: 1.5rem;
+      margin: 0 auto;
+    }
+
+    @include tablet {
+      @include font-desktop-labels-buttons();
+      width: 70%;
+      padding-bottom: 3rem;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -176,7 +316,7 @@ body {
   margin: auto;
   padding-bottom: 3rem;
   justify-content: center;
-  @extend .font-desktop-body-copy;
+  @include font-desktop-body-copy();
   &--paragraph1 {
     padding-right: 3rem;
   }
@@ -185,7 +325,7 @@ body {
 .gallery {
   background-color: $color-text-secondary-alabaster;
   h2 {
-    @extend .font-desktop-section-header;
+    @include font-desktop-section-header();
     padding: 3rem 2.25rem 2.25rem 5rem;
     margin: 0;
   }
@@ -211,8 +351,8 @@ body {
     position: relative;
 
     h2 {
-      color: $color-text-secondary-mercury;
-      @extend .font-desktop-section-header;
+      @include font-desktop-section-header();
+      color: $color-text-primary-white;
       padding: 3rem 2.25rem 2.25rem 0;
       margin: 0;
     }
@@ -231,41 +371,39 @@ body {
   }
 
   &__copy-right {
-    @extend .font-desktop-footer-copy;
+    @include font-desktop-footer-copy();
     padding-bottom: 2.25rem;
   }
 }
 
-.footer__photographers-container{
+.footer__agents-container {
   display: flex;
 }
 
-.footer__photographer {
+.footer__agent {
   padding-right: 2.25rem;
   color: $color-text-secondary-mercury;
   p {
     margin: 0;
   }
   &--name {
-    @extend .font-desktop-labels-buttons;
+    @include font-desktop-labels-buttons();
     padding-bottom: 2.25rem;
   }
   &--address {
-    @extend .font-desktop-footer-copy;
+    @include font-desktop-footer-copy();
     padding-bottom: 2.25rem;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
   }
 
-   &--email {
-    @extend .font-desktop-footer-copy;
-    padding-bottom: 2.25rem; 
+  &--email {
+    @include font-desktop-footer-copy();
+    padding-bottom: 2.25rem;
     display: block;
   }
-  
-
-
 }
