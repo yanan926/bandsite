@@ -14,7 +14,7 @@
   font-family: "Avenir Next";
   src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf") format("ttf");
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
 }
 * {
   box-sizing: border-box;
@@ -42,8 +42,9 @@
 @media (min-width: 768px) {
   .main-nav {
     font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -53,8 +54,9 @@
 @media (min-width: 1280px) {
   .main-nav {
     font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
@@ -84,7 +86,6 @@
 }
 .main-nav__item:hover {
   border-bottom: 3px solid #fff;
-  font-weight: bold;
 }
 .main-nav__item a {
   color: #E1E1E1;
@@ -92,6 +93,7 @@
 }
 .main-nav__item a:hover {
   color: #FFFFFF;
+  font-weight: bold;
 }
 @media (min-width: 320px) {
   .main-nav__item {

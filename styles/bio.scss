@@ -25,7 +25,7 @@
     url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf")
       format("ttf");
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
 }
 
 * {
@@ -129,7 +129,7 @@
   }
 
   @include tablet {
-    @include font-desktop-labels-buttons();
+    @include font-desktop-body-copy();
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -137,7 +137,7 @@
   }
 
   @include desktop {
-    @include font-desktop-labels-buttons();
+    @include font-desktop-body-copy();
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
@@ -165,12 +165,12 @@
   &__item {
     &:hover {
       border-bottom: 3px solid #fff;
-      font-weight: bold;
     }
     a {
       color: $color-text-secondary-mercury;
       &:hover {
         color: $color-text-primary-white;
+        font-weight: bold;
       }
       text-decoration: none;
     }
