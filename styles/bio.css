@@ -254,17 +254,6 @@
     padding-bottom: 1rem;
   }
 }
-@media (min-width: 1280px) {
-  .bio h3 {
-    width: 70%;
-    margin: 0 auto;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    color: #323232;
-    padding-bottom: 2.25rem;
-  }
-}
 @media (min-width: 320px) {
   .bio h4 {
     font-size: 14px;
@@ -428,7 +417,7 @@
     font-weight: 700;
     color: #323232;
     color: #FFFFFF;
-    padding: 1.5rem 1rem 1rem 0;
+    padding: 1.5rem 1rem 0 0;
     margin: 0;
   }
 }
@@ -443,7 +432,7 @@
     font-weight: 700;
     color: #323232;
     color: #FFFFFF;
-    padding: 3rem 2.25rem 2.25rem 0;
+    padding: 3rem 1.125rem 2.25rem 0;
     margin: 0;
   }
 }
@@ -452,7 +441,7 @@
 }
 @media (min-width: 320px) {
   .footer__social-icons-container .footer__social--icon {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
   }
 }
 @media (min-width: 768px) {
@@ -504,7 +493,7 @@
 @media (min-width: 320px) {
   .footer__agents-container {
     flex-direction: column;
-    padding-bottom: 3.25rem;
+    padding-bottom: 2.25rem;
   }
 }
 @media (min-width: 768px) {

@@ -291,13 +291,6 @@
       @include font-desktop-sub-header();
       padding-bottom: 1rem;
     }
-
-    @include desktop {
-      width: 70%;
-      margin: 0 auto;
-      @include font-desktop-sub-header();
-      padding-bottom: 2.25rem;
-    }
   }
 
   h4 {
@@ -417,7 +410,7 @@
       h2 {
         @include font-mobile-section-header();
         color: $color-text-primary-white;
-        padding: 1.5rem 1rem 1rem 0;
+        padding: 1.5rem 1rem 0 0;
         margin: 0;
       }
     }
@@ -428,7 +421,7 @@
       h2 {
         @include font-desktop-section-header();
         color: $color-text-primary-white;
-        padding: 3rem 2.25rem 2.25rem 0;
+        padding: 3rem 1.125rem 2.25rem 0;
         margin: 0;
       }
     }
@@ -438,7 +431,7 @@
     display: flex;
     @include mobile {
       .footer__social--icon {
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 0;
       }
     }
     @include tablet {
@@ -481,7 +474,7 @@
   display: flex;
   @include mobile {
     flex-direction: column;
-    padding-bottom: 3.25rem;
+    padding-bottom: 2.25rem;
   }
   @include tablet {
     flex-direction: row;
