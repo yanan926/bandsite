@@ -198,11 +198,11 @@
   }
 
   @include tablet {
-    height: 32rem;
+    height: 30rem;
   }
 
   @include desktop {
-    height: 34rem;
+    height: 42rem;
   }
 
   position: relative;
@@ -253,7 +253,7 @@
     @include tablet {
       @include font-desktop-section-header();
       padding-bottom: 2.25rem;
-      padding: 3rem 2.25rem 2.25rem 4rem;
+      padding: 3rem 2.25rem;
     }
 
     @include desktop {
@@ -286,6 +286,13 @@
       padding-bottom: 1rem;
     }
     @include tablet {
+      width: 70%;
+      margin: 0 auto;
+      @include font-desktop-sub-header();
+      padding-bottom: 1rem;
+    }
+
+    @include desktop {
       width: 70%;
       margin: 0 auto;
       @include font-desktop-sub-header();
@@ -339,15 +346,18 @@
 .gallery {
   background-color: $color-text-secondary-alabaster;
   h2 {
+    margin: 0;
     @include mobile {
       @include font-mobile-section-header();
       padding: 1.5rem 1rem 1rem 1rem;
-      margin: 0;
     }
     @include tablet {
       @include font-desktop-section-header();
+      padding: 3rem 2.25rem;
+    }
+    @include desktop {
+      @include font-desktop-section-header();
       padding: 3rem 2.25rem 2.25rem 7rem;
-      margin: 0;
     }
   }
   &__container {
@@ -362,6 +372,18 @@
     }
 
     @include tablet {
+      flex-direction: row;
+      padding: 0 1.5rem 1rem 3rem;
+      margin: auto;
+      flex-wrap: wrap;
+      &--img {
+        padding: 0 1.5rem 1.5rem 0;
+        width: 33.3%;
+        box-sizing: border-box;
+      }
+    }
+
+    @include desktop {
       flex-direction: row;
       padding: 0 5rem 1rem 7rem;
       margin: auto;
@@ -382,6 +404,10 @@
     padding: 0 1rem;
   }
   @include tablet {
+    padding: 0 0 0 3rem;
+  }
+
+  @include desktop {
     padding: 0 7rem;
   }
   &__title-container {
@@ -431,6 +457,10 @@
 
     @include tablet {
       top: 4rem;
+      left: 38rem;
+    }
+    @include desktop {
+      top: 4rem;
       left: 65rem;
     }
   }
@@ -454,6 +484,10 @@
     padding-bottom: 3.25rem;
   }
   @include tablet {
+    flex-direction: row;
+    padding-bottom: 2.25rem;
+  }
+  @include desktop {
     flex-direction: row;
     padding-bottom: 2.25rem;
   }
@@ -500,6 +534,11 @@
     @include mobile {
       @include font-mobile-footer-copy();
       padding-bottom: 2rem;
+      display: block;
+    }
+    @include tablet {
+      @include font-desktop-footer-copy();
+      padding-bottom: 0;
       display: block;
     }
 
