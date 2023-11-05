@@ -265,17 +265,19 @@
   }
 
   &__img {
+    margin: auto;
+    display: block;
     @include mobile {
       padding-bottom: 1rem;
       width: 90%;
-      margin: auto;
-      display: block;
     }
     @include tablet {
       padding-bottom: 2.25rem;
+      width: 80%;
+    }
+    @include desktop {
+      padding-bottom: 2.25rem;
       width: 70%;
-      margin: auto;
-      display: block;
     }
   }
 
@@ -423,7 +425,15 @@
         @include font-desktop-section-header();
         color: $color-text-primary-white;
         padding: 3rem 1.125rem 2.25rem 0;
-        margin: 0;
+      }
+    }
+    @include desktop {
+      flex-direction: row;
+      align-items: baseline;
+      h2 {
+        @include font-desktop-section-header();
+        color: $color-text-primary-white;
+        padding: 3rem 2.25rem 2.25rem 0;
       }
     }
   }
@@ -432,13 +442,17 @@
     display: flex;
     @include mobile {
       .footer__social--icon {
-        padding: 1rem 1rem 1rem 0;
+        padding: 1rem 1.5rem 1rem 0;
       }
     }
     @include tablet {
       .footer__social--icon {
-        padding: 0 1.125rem;
+        padding: 0 2.25rem 0 0;
       }
+    }
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 
@@ -462,7 +476,7 @@
   &__copy-right {
     @include mobile {
       @include font-mobile-footer-copy();
-      padding: 2rem 0;
+      padding: 2rem 0 1rem;
     }
     @include tablet {
       @include font-desktop-footer-copy();
@@ -489,7 +503,13 @@
 
 .footer__agent {
   color: $color-text-secondary-mercury;
+  @include mobile {
+    padding-right: 0;
+  }
   @include tablet {
+    padding-right: 2.25rem;
+  }
+  @include desktop {
     padding-right: 3rem;
   }
   p {
