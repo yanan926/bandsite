@@ -35,6 +35,7 @@
   margin: 0;
 }
 
+//media query doesn't allow extend, so mixin is applied for the font variable
 @mixin font-desktop-page-header() {
   font-size: 60px;
   line-height: 68px;
@@ -320,7 +321,7 @@
     flex-direction: column;
     @include font-mobile-body-copy();
     &--paragraph1 {
-      padding-bottom: 1.5rem;
+      padding: 0 0 1.5rem 0;
     }
   }
 
@@ -331,7 +332,7 @@
     justify-content: center;
     @include font-desktop-body-copy();
     &--paragraph1 {
-      padding-right: 3rem;
+      padding: 0 3rem 0 0;
     }
   }
 }
@@ -489,7 +490,7 @@
 .footer__agent {
   color: $color-text-secondary-mercury;
   @include tablet {
-    padding-right: 2.25rem;
+    padding-right: 3rem;
   }
   p {
     margin: 0;

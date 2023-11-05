@@ -294,7 +294,7 @@
     color: #323232;
   }
   .bio__desc--paragraph1 {
-    padding-bottom: 1.5rem;
+    padding: 0 0 1.5rem 0;
   }
 }
 @media (min-width: 768px) {
@@ -309,7 +309,7 @@
     color: #323232;
   }
   .bio__desc--paragraph1 {
-    padding-right: 3rem;
+    padding: 0 3rem 0 0;
   }
 }
 
@@ -516,7 +516,7 @@
 }
 @media (min-width: 768px) {
   .footer__agent {
-    padding-right: 2.25rem;
+    padding-right: 3rem;
   }
 }
 .footer__agent p {
