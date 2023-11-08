@@ -577,14 +577,73 @@
     }
     @include desktop {
       @include font-desktop-section-header();
-      padding: 3rem 2.25rem 2.25rem 7rem;
+      padding: 3rem 2.25rem 1.25rem 7rem;
     }
   }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #afafaf;
+    width: 70%;
+
+    .button {
+      text-transform: uppercase;
+      @include font-desktop-labels-buttons();
+      margin: 2.25rem 0;
+      height: 40px;
+      min-width: 9.375rem;
+      padding: 0 2rem;
+      border-radius: 4px;
+      background-color: $color-text-primary-black;
+      color: $color-text-primary-white;
+    }
+
+    hr {
+      border-color:$color-text-secondary-mercury;
+      width: 60%;
+      border-width: 1px;
+    }
+  }
+
+  &__input-logo-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
   &__logo {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background: url(../assets/Images/Mohan-muruge.jpg);
     background-size: cover;
+    margin: 0 1rem;
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    @include font-desktop-body-copy();
+    label {
+      color: #afafaf;
+      text-transform: uppercase;
+      margin: 1rem 0 4px 0;
+    }
+    input,
+    textarea {
+      border: $color-text-secondary-mercury 1px solid;
+      border-radius: 4px;
+      padding: 1rem;
+      background-color: $color-text-secondary-alabaster;
+      &::placeholder {
+        color: $color-text-primary-black;
+      }
+
+      input {
+        max-height: 3rem;
+      }
+    }
   }
 }
