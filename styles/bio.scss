@@ -563,3 +563,28 @@
     }
   }
 }
+
+.conversation {
+  h2 {
+    margin: 0;
+    @include mobile {
+      @include font-mobile-section-header();
+      padding: 1.5rem 1rem 1rem 1rem;
+    }
+    @include tablet {
+      @include font-desktop-section-header();
+      padding: 3rem 2.25rem;
+    }
+    @include desktop {
+      @include font-desktop-section-header();
+      padding: 3rem 2.25rem 2.25rem 7rem;
+    }
+  }
+  &__logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: url(../assets/Images/Mohan-muruge.jpg);
+    background-size: cover;
+  }
+}

@@ -620,4 +620,42 @@
     padding-bottom: 2.25rem;
     display: block;
   }
+}
+
+.conversation h2 {
+  margin: 0;
+}
+@media (min-width: 320px) {
+  .conversation h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #323232;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .conversation h2 {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    color: #323232;
+    padding: 3rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .conversation h2 {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    color: #323232;
+    padding: 3rem 2.25rem 2.25rem 7rem;
+  }
+}
+.conversation__logo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: url(../assets/Images/Mohan-muruge.jpg);
+  background-size: cover;
 }/*# sourceMappingURL=bio.css.map */
