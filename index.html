@@ -113,7 +113,7 @@
 
     <section class="conversation">
       <h2>Join the converstation</h2>
-      <form action="">
+      <form action="submit">
         <div class="conversation__container">
           <div class="conversation__input-logo-container">
             <div class="conversation__logo"></div>
@@ -136,22 +136,31 @@
               rows="3"
               class="conversation__input-comment"
               placeholder="Add a new comment"
-              ></textarea>
+            ></textarea>
           </div>
+          <input type="submit" value="Comment" class="button" />
+          <hr class="conversation__divider"/>
 
-          <input type="submit" value="button" class="button" />
-          <hr>
+          <ul class="comments">
+            <li class="comments__container">
+              <div class="comments__logo"></div>
+              <div class="comments__input-container">
+                <div class="comments__name-date-container">
+                  <h4 class="comments__name">Connor Walton</h4>
+                  <h4 class="comments__date">2023-02-28</h4>
+                </div>
+                <p>
+                  This is art. This is inexplicable magic expressed in the
+                  purest way,everything that makes up this majestic work
+                  deserves reverence. Let us appreciate this for what it is and
+                  what it contains
+                </p>
+              </div>
+            </li>
+            <hr class="comment__divider"/>
+          </ul>
         </div>
-
       </form>
-
-      <ul class="comments">
-        <li>
-          <h4></h4>
-          <p></p>
-          <hr />
-        </li>
-      </ul>
     </section>
 
     <footer class="footer">
