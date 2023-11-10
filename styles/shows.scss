@@ -1,0 +1,148 @@
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+@use "./partials/breakpoints" as *;
+
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next";
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav {
+  background-color: $color-text-primary-black;
+  display: flex;
+  @include mobile {
+    @include font-mobile-body-copy();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+  }
+
+  @include tablet {
+    @include font-desktop-body-copy();
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  @include desktop {
+    @include font-desktop-body-copy();
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 6rem;
+  }
+
+  img {
+    max-height: 1.25rem;
+    padding: 0 1rem;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-basis: 1;
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__item {
+    &:hover {
+      border-bottom: 3px solid #fff;
+    }
+    a {
+      color: $color-text-secondary-mercury;
+      &:hover {
+        color: $color-text-primary-white;
+        font-weight: bold;
+      }
+      text-decoration: none;
+    }
+    @include mobile {
+      text-align: center;
+      width: 50%;
+      padding: 1rem 0;
+      margin: 0;
+    }
+
+    @include tablet {
+      text-align: start;
+      width: auto;
+      padding: 2rem 0;
+      margin: 0 1rem;
+    }
+  }
+}
+
+.hero {
+  color: #ffffff;
+  background: url(../assets/Images/hero-bio.jpg) top;
+  background-size: cover;
+  @include mobile {
+    height: 16rem;
+  }
+
+  @include tablet {
+    height: 30rem;
+  }
+
+  @include desktop {
+    height: 42rem;
+  }
+
+  position: relative;
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-text-primary-black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  h1 {
+    @include mobile {
+      @include font-mobile-page-header();
+      padding: 0 1rem;
+      color: #ffffff;
+    }
+    @include tablet {
+      @include font-desktop-page-header();
+      padding: 0 3rem;
+      color: #ffffff;
+    }
+    @include desktop {
+      @include font-desktop-page-header();
+      padding: 0 7rem;
+      color: #ffffff;
+    }
+  }
+
+  h2 {
+    @include desktop {
+      @include font-desktop-sub-header();
+      color: #ffffff;
+      padding: 1rem 7rem;
+    }
+    
+  }
+
+  &__slogan {
+    opacity: 100%;
+    z-index: 2;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}

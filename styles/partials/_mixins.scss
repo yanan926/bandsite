@@ -1,3 +1,4 @@
+@use "./colors" as *;
 @use "./breakpoints" as *;
 
 @mixin mobile {
@@ -17,3 +18,87 @@
         @content;
     }
 }
+
+//media query doesn't allow extend, so mixin is applied for the font variable
+@mixin font-desktop-page-header() {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-desktop-section-header() {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-desktop-sub-header() {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-desktop-body-copy() {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-desktop-footer-copy() {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  
+  @mixin font-desktop-labels-buttons() {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  
+  @mixin font-mobile-page-header() {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-mobile-section-header() {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-mobile-sub-header {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-mobile-body-copy() {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $color-text-primary-black;
+  }
+  
+  @mixin font-mobile-footer-copy() {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+  
+  @mixin font-mobile-labels-buttons() {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  
