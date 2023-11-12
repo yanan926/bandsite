@@ -56,12 +56,14 @@
   }
 
   &__item {
-    &:hover,  &-active {
+    &:hover,
+    &-active {
       border-bottom: 3px solid #fff;
     }
     a {
       color: $color-text-secondary-mercury;
-      &:hover, .active{
+      &:hover,
+      &.active {
         color: $color-text-primary-white;
         font-weight: bold;
       }
@@ -117,6 +119,7 @@
       @include font-mobile-page-header();
       padding: 0 1rem;
       color: #ffffff;
+      text-align: left;
     }
     @include tablet {
       @include font-desktop-page-header();
@@ -131,6 +134,11 @@
   }
 
   h2 {
+    @include mobile {
+      @include font-mobile-sub-header();
+      padding: 0 1rem;
+      color: #ffffff;
+    }
     @include desktop {
       @include font-desktop-sub-header();
       color: #ffffff;
@@ -147,30 +155,67 @@
     transform: translateY(50%);
     &-container {
       width: 100%;
-      padding-right: 10%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      span {
-        font-size: 3rem;
-        color:#FFFFFF;
+      @include mobile {
+        padding-right: 0;
+        flex-direction: column;
+        text-align: center;
+        iframe {
+          width: 90%;
+          height: 6rem;
+          align-self: center;
+        }
       }
-      iframe {
-        width: 25rem;
-        height: 80%;
+      @include desktop {
+        padding-right: 10%;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        iframe {
+          width: 25rem;
+          height: 80%;
+        }
       }
     }
-  }
 
-  .hero__slogan-text-line2 {
-    margin-left: -1.5rem;
+    &-text {
+      padding: 1rem 0;
+    }
+
+    &-text-line2 {
+      span {
+        color: #ffffff;
+        @include mobile {
+          font-size: 1rem;
+          position: absolute;
+          right: 5.5rem;
+          top: 2.5rem;
+        }
+        @include tablet {
+          font-size: 3rem;
+          position: static;
+        }
+      }
+
+      @include tablet {
+        margin-left: -1.5rem;
+      }
+    }
   }
 }
 
 .shows {
   display: flex;
-  justify-content: space-between;
-  padding: 3rem 6rem;
+  @include mobile {
+    flex-direction: column;
+    padding: 0;
+  }
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 6rem;
+  }
+
   h2 {
     @include font-desktop-section-header();
   }
@@ -184,11 +229,21 @@
     }
   }
   table {
-    width: 80%;
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: 80%;
+    }
   }
   tbody {
     display: flex;
-    flex-direction: column;
+    @include mobile {
+      flex-direction: column;
+    }
+    @include tablet {
+      flex-direction: column;
+    }
     width: 100%;
   }
   tr {
@@ -197,7 +252,8 @@
     align-items: baseline;
     padding: 1.5rem 1.125rem;
     border-bottom: solid 1px $color-text-secondary-mercury;
-    td.shows__table-title-venue, td.shows__table-title-location {
+    td.shows__table-title-venue,
+    td.shows__table-title-location {
       width: 20%;
     }
     th.shows__table-title-date {
@@ -209,7 +265,8 @@
     td.shows__table-content {
       width: 20%;
     }
-    th.shows__table-title-venue, th.shows__table-title-location {
+    th.shows__table-title-venue,
+    th.shows__table-title-location {
       width: 20%;
     }
   }
@@ -406,4 +463,3 @@
     }
   }
 }
-

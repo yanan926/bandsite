@@ -92,7 +92,7 @@
   color: #E1E1E1;
   text-decoration: none;
 }
-.main-nav__item a:hover, .main-nav__item a .active {
+.main-nav__item a:hover, .main-nav__item a.active {
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -155,6 +155,7 @@
     color: #323232;
     padding: 0 1rem;
     color: #ffffff;
+    text-align: left;
   }
 }
 @media (min-width: 768px) {
@@ -179,6 +180,16 @@
     color: #ffffff;
   }
 }
+@media (min-width: 320px) {
+  .hero h2 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #323232;
+    padding: 0 1rem;
+    color: #ffffff;
+  }
+}
 @media (min-width: 1280px) {
   .hero h2 {
     font-size: 24px;
@@ -199,27 +210,73 @@
 }
 .hero__slogan-container {
   width: 100%;
-  padding-right: 10%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
-.hero__slogan-container span {
-  font-size: 3rem;
-  color: #FFFFFF;
+@media (min-width: 320px) {
+  .hero__slogan-container {
+    padding-right: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero__slogan-container iframe {
+    width: 90%;
+    height: 6rem;
+    align-self: center;
+  }
 }
-.hero__slogan-container iframe {
-  width: 25rem;
-  height: 80%;
+@media (min-width: 1280px) {
+  .hero__slogan-container {
+    padding-right: 10%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .hero__slogan-container iframe {
+    width: 25rem;
+    height: 80%;
+  }
 }
-.hero .hero__slogan-text-line2 {
-  margin-left: -1.5rem;
+.hero__slogan-text {
+  padding: 1rem 0;
+}
+.hero__slogan-text-line2 span {
+  color: #ffffff;
+}
+@media (min-width: 320px) {
+  .hero__slogan-text-line2 span {
+    font-size: 1rem;
+    position: absolute;
+    right: 5.5rem;
+    top: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__slogan-text-line2 span {
+    font-size: 3rem;
+    position: static;
+  }
+}
+@media (min-width: 768px) {
+  .hero__slogan-text-line2 {
+    margin-left: -1.5rem;
+  }
 }
 
 .shows {
   display: flex;
-  justify-content: space-between;
-  padding: 3rem 6rem;
+}
+@media (min-width: 320px) {
+  .shows {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .shows {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 6rem;
+  }
 }
 .shows h2 {
   font-size: 36px;
@@ -237,13 +294,29 @@
 .shows__table-title th {
   text-align: left;
 }
-.shows table {
-  width: 80%;
+@media (min-width: 320px) {
+  .shows table {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .shows table {
+    width: 80%;
+  }
 }
 .shows tbody {
   display: flex;
-  flex-direction: column;
   width: 100%;
+}
+@media (min-width: 320px) {
+  .shows tbody {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .shows tbody {
+    flex-direction: column;
+  }
 }
 .shows tr {
   display: flex;
@@ -252,7 +325,8 @@
   padding: 1.5rem 1.125rem;
   border-bottom: solid 1px #E1E1E1;
 }
-.shows tr td.shows__table-title-venue, .shows tr td.shows__table-title-location {
+.shows tr td.shows__table-title-venue,
+.shows tr td.shows__table-title-location {
   width: 20%;
 }
 .shows tr th.shows__table-title-date {
@@ -264,7 +338,8 @@
 .shows tr td.shows__table-content {
   width: 20%;
 }
-.shows tr th.shows__table-title-venue, .shows tr th.shows__table-title-location {
+.shows tr th.shows__table-title-venue,
+.shows tr th.shows__table-title-location {
   width: 20%;
 }
 .shows button {
