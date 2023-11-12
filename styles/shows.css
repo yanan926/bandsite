@@ -190,11 +190,30 @@
   }
 }
 .hero__slogan {
+  width: 100%;
   opacity: 100%;
   z-index: 2;
   position: absolute;
   bottom: 50%;
   transform: translateY(50%);
+}
+.hero__slogan-container {
+  width: 100%;
+  padding-right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero__slogan-container span {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  color: #323232;
+  color: #FFFFFF;
+}
+.hero__slogan-container iframe {
+  width: 25rem;
+  height: 80%;
 }
 
 .shows {

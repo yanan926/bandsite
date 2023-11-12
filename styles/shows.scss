@@ -139,11 +139,27 @@
   }
 
   &__slogan {
+    width: 100%;
     opacity: 100%;
     z-index: 2;
     position: absolute;
     bottom: 50%;
     transform: translateY(50%);
+    &-container {
+      width: 100%;
+      padding-right: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        @include font-desktop-section-header();
+        color:#FFFFFF;
+      }
+      iframe {
+        width: 25rem;
+        height: 80%;
+      }
+    }
   }
 }
 
