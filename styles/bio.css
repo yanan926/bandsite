@@ -84,14 +84,14 @@
     width: auto;
   }
 }
-.main-nav__item:hover {
+.main-nav__item:hover, .main-nav__item-active {
   border-bottom: 3px solid #fff;
 }
 .main-nav__item a {
   color: #E1E1E1;
   text-decoration: none;
 }
-.main-nav__item a:hover {
+.main-nav__item a:hover, .main-nav__item a.active {
   color: #FFFFFF;
   font-weight: bold;
 }

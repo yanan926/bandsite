@@ -55,12 +55,12 @@
   }
 
   &__item {
-    &:hover {
+    &:hover, &-active {
       border-bottom: 3px solid #fff;
     }
     a {
       color: $color-text-secondary-mercury;
-      &:hover {
+      &:hover, &.active {
         color: $color-text-primary-white;
         font-weight: bold;
       }
