@@ -205,15 +205,15 @@
   justify-content: space-between;
 }
 .hero__slogan-container span {
-  font-size: 36px;
-  line-height: 44px;
-  font-weight: 700;
-  color: #323232;
+  font-size: 3rem;
   color: #FFFFFF;
 }
 .hero__slogan-container iframe {
   width: 25rem;
   height: 80%;
+}
+.hero .hero__slogan-text-line2 {
+  margin-left: -1.5rem;
 }
 
 .shows {

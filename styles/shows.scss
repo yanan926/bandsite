@@ -152,7 +152,7 @@
       align-items: center;
       justify-content: space-between;
       span {
-        @include font-desktop-section-header();
+        font-size: 3rem;
         color:#FFFFFF;
       }
       iframe {
@@ -160,6 +160,10 @@
         height: 80%;
       }
     }
+  }
+
+  .hero__slogan-text-line2 {
+    margin-left: -1.5rem;
   }
 }
 
