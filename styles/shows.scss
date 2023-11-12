@@ -7,6 +7,7 @@
   font-family: "Avenir Next";
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 .main-nav {
@@ -84,7 +85,7 @@
 
 .hero {
   color: #ffffff;
-  background: url(../assets/Images/hero-bio.jpg) top;
+  background: url(../assets/Images/hero-shows.jpg) top;
   background-size: cover;
   @include mobile {
     height: 16rem;
@@ -135,7 +136,6 @@
       color: #ffffff;
       padding: 1rem 7rem;
     }
-    
   }
 
   &__slogan {
@@ -144,5 +144,73 @@
     position: absolute;
     bottom: 50%;
     transform: translateY(50%);
+  }
+}
+
+.shows {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+  h2 {
+    @include font-desktop-section-header();
+  }
+
+  &__table-title {
+    text-transform: uppercase;
+    @include font-desktop-labels-buttons();
+    color: $color-text-primary-silver;
+    th {
+      text-align: left;
+    }
+  }
+  table {
+    width: 80%;
+  }
+  tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.5rem 1.125rem;
+    border-bottom: solid 1px $color-text-secondary-mercury;
+    td.shows__table-title-venue, td.shows__table-title-location {
+      width: 20%;
+    }
+    th.shows__table-title-date {
+      width: 30%;
+    }
+    td.shows__table-date {
+      width: 30%;
+    }
+    td.shows__table-content {
+      width: 20%;
+    }
+    th.shows__table-title-venue, th.shows__table-title-location {
+      width: 20%;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    @include font-desktop-labels-buttons();
+    height: 40px;
+    min-width: 9.375rem;
+    border-radius: 4px;
+    background-color: $color-text-primary-black;
+    color: $color-text-secondary-mercury;
+  }
+
+  &__table {
+    @include desktop {
+      @include font-desktop-footer-copy();
+    }
+  }
+
+  tr &__table-date {
+    font-weight: bold;
   }
 }

@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../styles/shows.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shows</title>
+    <link rel="stylesheet" href="../styles/shows.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav" aria-label="Main">
+        <img src="../assets/Logo/Logo-bandsite.svg" alt="band site logo" />
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Biography</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Shows</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <nav class="main-nav" aria-label="Main">
-      <img src="../assets/Logo/Logo-bandsite.svg" alt="band site logo" />
-      <ul class="main-nav__list">
-        <li class="main-nav__item">
-          <a href="#" class="main-nav__link">Biography</a>
-        </li>
-        <li class="main-nav__item">
-          <a href="#" class="main-nav__link">Shows</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__slogan">
+        <h2>Beautiful Beast Album</h2>
+        <h1>Queen of Yellow</h1>
+        <h1>X For the Stings</h1>
+      </div>
+    </section>
 
-  <section class="hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__slogan">
-      <h2>Beautiful Beast Album</h2>
-      <h1>Queen of Yellow</h1>
-      <h1>X For the Stings</h1>
-    </div>
-  </section>
+    <section class="shows">
+      <h2>Shows</h2>
+      <table class="shows__table">
+        <tr class="shows__table-title">
+          <th class="shows__table-title-date">Date</th>
+          <th class="shows__table-title-venue">Venue</th>
+          <th class="shows__table-title-location">Location</th>
+          <th class="shows__table-title-location"></th>
+        </tr>
+        <tr>
+          <td class="shows__table-date">Mon Sept 06 2021 </td>
+          <td class="shows__table-content">Ronald Lane</td>
+          <td class="shows__table-content">San Francisco, CA</td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
+        <tr>
+          <td class="shows__table-date">Tue Sept 21 2021</td>
+          <td class="shows__table-content">Pier 3 East</td>
+          <td class="shows__table-content">San Francisco, CA </td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
+        <tr>
+          <td class="shows__table-date">Fri Oct 15 2021</td>
+          <td class="shows__table-content">View Lounge</td>
+          <td class="shows__table-content">San Francisco, CA </td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
+        <tr>
+          <td class="shows__table-date">Sat Nov 06 2021</td>
+          <td class="shows__table-content">Hyatt Agency</td>
+          <td class="shows__table-content">San Francisco, CA </td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
+        <tr>
+          <td class="shows__table-date">Fri Nov 26 2021</td>
+          <td class="shows__table-content">Moscow Center</td>
+          <td class="shows__table-content">San Francisco, CA </td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
 
-  
-</body>
+        <tr>
+          <td class="shows__table-date">Wed Dec 15 2021</td>
+          <td class="shows__table-content">Press Club</td>
+          <td class="shows__table-content">San Francisco, CA </td>
+          <td class="shows__table-content"><button>Buy tickets</button></td>
+        </tr>
+
+      </table>
+    </section>
+
+    
+  </body>
 </html>

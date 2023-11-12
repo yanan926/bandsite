@@ -21,6 +21,7 @@
   font-family: "Avenir Next";
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 .main-nav {
@@ -114,7 +115,7 @@
 
 .hero {
   color: #ffffff;
-  background: url(../assets/Images/hero-bio.jpg) top;
+  background: url(../assets/Images/hero-shows.jpg) top;
   background-size: cover;
   position: relative;
 }
@@ -194,4 +195,77 @@
   position: absolute;
   bottom: 50%;
   transform: translateY(50%);
+}
+
+.shows {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+}
+.shows h2 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  color: #323232;
+}
+.shows__table-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #AFAFAF;
+}
+.shows__table-title th {
+  text-align: left;
+}
+.shows table {
+  width: 80%;
+}
+.shows tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.shows tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem 1.125rem;
+  border-bottom: solid 1px #E1E1E1;
+}
+.shows tr td.shows__table-title-venue, .shows tr td.shows__table-title-location {
+  width: 20%;
+}
+.shows tr th.shows__table-title-date {
+  width: 30%;
+}
+.shows tr td.shows__table-date {
+  width: 30%;
+}
+.shows tr td.shows__table-content {
+  width: 20%;
+}
+.shows tr th.shows__table-title-venue, .shows tr th.shows__table-title-location {
+  width: 20%;
+}
+.shows button {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  height: 40px;
+  min-width: 9.375rem;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #E1E1E1;
+}
+@media (min-width: 1280px) {
+  .shows__table {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}
+tr .shows__table-date {
+  font-weight: bold;
 }/*# sourceMappingURL=shows.css.map */
