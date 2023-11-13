@@ -662,29 +662,55 @@
 }
 .conversation__container .button {
   text-transform: uppercase;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 700;
-  margin: 2.25rem 0;
   height: 40px;
   min-width: 9.375rem;
-  padding: 0 2rem;
   border-radius: 4px;
   background-color: #323232;
   color: #FFFFFF;
   align-self: flex-end;
+}
+@media (min-width: 320px) {
+  .conversation__container .button {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .conversation__container .button {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 2.25rem 0;
+    padding: 0 2rem;
+  }
+}
+.conversation__container .button:hover {
+  background-color: #000000;
 }
 .conversation__input-logo-container {
   display: flex;
   align-items: flex-end;
 }
 .conversation__logo {
-  width: 3rem;
-  height: 3rem;
   border-radius: 50%;
   background: url(../assets/Images/Mohan-muruge.jpg);
   background-size: cover;
   margin: 0 1rem;
+}
+@media (min-width: 320px) {
+  .conversation__logo {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .conversation__logo {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 .conversation__input-container {
   display: flex;
@@ -753,9 +779,19 @@
   width: 30rem;
 }
 .comments__logo {
-  width: 3rem;
-  height: 3rem;
   border-radius: 50%;
   background-color: #E1E1E1;
   margin: 0 1rem;
+}
+@media (min-width: 320px) {
+  .comments__logo {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .comments__logo {
+    width: 3rem;
+    height: 3rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
