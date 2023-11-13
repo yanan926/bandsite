@@ -27,6 +27,19 @@ function createCommentElement(elementType, text, className) {
 }
 
 const ulEl = document.querySelector(".comments");
+
+function dateStringConvert() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  let mm = today.getMonth() + 1; // Months start at 0!
+  let dd = today.getDate();
+  
+  if (dd < 10) dd = '0' + dd;
+  if (mm < 10) mm = '0' + mm;
+  const formattedToday = dd + '/' + mm + '/' + yyyy;
+  return formattedToday;
+}
+
 function displayCommentList() {
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
@@ -67,7 +80,7 @@ formEl.addEventListener("submit", (event) => {
   const newComment = {
     name: event.target.name.value,
     comment: event.target.comment.value,
-    date: new Date().toDateString(),
+    date: dateStringConvert(),
   };
   commentsList.unshift(newComment);
   displayCommentList();

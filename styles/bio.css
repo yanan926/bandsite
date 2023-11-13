@@ -780,6 +780,11 @@
   padding: 1rem;
   background-color: #FAFAFA;
 }
+.conversation__input-container input:focus,
+.conversation__input-container textarea:focus {
+  border: #323232 1px solid;
+  outline: #323232;
+}
 .conversation__input-container input::-moz-placeholder, .conversation__input-container textarea::-moz-placeholder {
   color: #323232;
 }

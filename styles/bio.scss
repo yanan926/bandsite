@@ -567,6 +567,10 @@
     }
     input,
     textarea {
+      &:focus {
+        border: $color-text-primary-black 1px solid;
+        outline: $color-text-primary-black;
+      }
       border: $color-text-secondary-mercury 1px solid;
       border-radius: 4px;
       padding: 1rem;
