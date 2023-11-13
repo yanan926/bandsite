@@ -720,18 +720,17 @@
   list-style-type: none;
 }
 .conversation__divider {
-  width: 60%;
   border: 1px solid #E1E1E1;
 }
 
 .comments {
   color: #323232;
-  width: 60%;
 }
 .comments__container {
   display: flex;
   justify-content: flex-end;
-  margin: 2.25rem 0;
+  border-top: 1px solid #E1E1E1;
+  padding: 2.25rem 0;
 }
 .comments__name-date-container {
   display: flex;

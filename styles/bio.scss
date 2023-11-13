@@ -55,12 +55,14 @@
   }
 
   &__item {
-    &:hover, &-active {
+    &:hover,
+    &-active {
       border-bottom: 3px solid #fff;
     }
     a {
       color: $color-text-secondary-mercury;
-      &:hover, &.active {
+      &:hover,
+      &.active {
         color: $color-text-primary-white;
         font-weight: bold;
       }
@@ -490,7 +492,6 @@
       background-color: $color-text-primary-black;
       color: $color-text-primary-white;
     }
-
   }
 
   &__input-logo-container {
@@ -532,25 +533,22 @@
       }
     }
   }
-  ul li{
+  ul li {
     list-style-type: none;
   }
 
   &__divider {
-    width: 60%;
-    border: 1px solid $color-text-secondary-mercury
+    border: 1px solid $color-text-secondary-mercury;
   }
 }
 
-
 .comments {
   color: $color-text-primary-black;
-  width: 60%;
   &__container {
     display: flex;
     justify-content: flex-end;
-    // border-bottom: 1px solid $color-text-secondary-mercury;
-    margin: 2.25rem 0;
+    border-top: 1px solid $color-text-secondary-mercury;
+    padding: 2.25rem 0;
   }
 
   &__name-date-container {
@@ -569,14 +567,12 @@
   &__input-container {
     width: 30rem;
   }
-  
+
   &__logo {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: $color-text-secondary-mercury;
-  margin: 0 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: $color-text-secondary-mercury;
+    margin: 0 1rem;
   }
 }
-
-
