@@ -506,7 +506,7 @@
       height: 40px;
       border-radius: 4px;
       color: $color-text-primary-white;
-      color: $color-text-secondary-mercury;
+      background-color: $color-text-primary-black;
       align-self: flex-end;
       @include mobile {
         @include font-mobile-labels-buttons();

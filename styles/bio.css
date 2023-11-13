@@ -695,7 +695,7 @@
   height: 40px;
   border-radius: 4px;
   color: #FFFFFF;
-  color: #E1E1E1;
+  background-color: #323232;
   align-self: flex-end;
 }
 @media (min-width: 320px) {
