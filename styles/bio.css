@@ -655,9 +655,10 @@
 .conversation__container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   color: #afafaf;
   width: 70%;
+  margin: auto;
 }
 .conversation__container .button {
   text-transform: uppercase;
@@ -671,6 +672,7 @@
   border-radius: 4px;
   background-color: #323232;
   color: #FFFFFF;
+  align-self: flex-end;
 }
 .conversation__input-logo-container {
   display: flex;
@@ -721,6 +723,10 @@
 }
 .conversation__divider {
   border: 1px solid #E1E1E1;
+}
+
+.conversation__logo--hidden {
+  visibility: hidden;
 }
 
 .comments {

@@ -477,9 +477,10 @@
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     color: #afafaf;
     width: 70%;
+    margin: auto;
 
     .button {
       text-transform: uppercase;
@@ -491,6 +492,7 @@
       border-radius: 4px;
       background-color: $color-text-primary-black;
       color: $color-text-primary-white;
+      align-self: flex-end;
     }
   }
 
@@ -540,6 +542,10 @@
   &__divider {
     border: 1px solid $color-text-secondary-mercury;
   }
+}
+
+.conversation__logo--hidden {
+  visibility: hidden;
 }
 
 .comments {
