@@ -19,7 +19,7 @@ let commentsList = [
   },
 ];
 
-// UL element: the parent
+console.log('hello')
 const commentEl = document.querySelector(".comments");
 
 // for each comment object in  array, create comment el, append it to commentsEl
@@ -32,16 +32,7 @@ for (let i = 0; i < commentsList.length; i++) {
   commentsEl.appendChild(commentEl);
 }
 
-/**
- * Creates a comment element
- *
- * @param {String} name
- * @param {Number} date
- * @param {String} comment
- * 
- *
- * @returns HtmlDomElement
- */
+
 function createcommentEl(name, date, commentText) {
   const commentEl = document.createElement("li");
   commentEl.classList.add("comment");
