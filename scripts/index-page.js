@@ -19,40 +19,58 @@ let commentsList = [
   },
 ];
 
-console.log('hello')
-const commentEl = document.querySelector(".comments");
-
-// for each comment object in  array, create comment el, append it to commentsEl
-for (let i = 0; i < commentsList.length; i++) {
-  const comment = commentsList[i];
-
-  const commentEl = createcommentEl(comment.name, comment.date, comment.comment);
-
-  // add each comment <li> to the comments <ul>
-  commentsEl.appendChild(commentEl);
-}
-
-
-function createcommentEl(name, date, commentText) {
-  const commentEl = document.createElement("li");
-  commentEl.classList.add("comment");
-
-  const nameEl = document.createElement("h3");
-  nameEl.classList.add("comment__name");
-  nameEl.innerText = name;
-
-  const dateEl = document.createElement("span");
-  dateEl.classList.add("comment__date");
-  dateEl.innerText = date;
-
-  const commentTextEl = document.createElement("p");
-  commentText.classList.add("comment__text");
-  commentText.innerText = commentText
-
-
-  commentEl.appendChild(nameEl);
-  commentEl.appendChild(dateEl);
-  commentEl.appendChild(commentTextEl);
-
+function createCommentElement(elementType, text, className) {
+  const commentEl = document.createElement(elementType);
+  commentEl.classList.add(className);
+  commentEl.innerText = text;
   return commentEl;
 }
+
+const ulEl = document.querySelector(".comments");
+function displayCommentList() {
+  ulEl.textContent = "";
+  for (let i = 0; i < commentsList.length; i++) {
+    let name = commentsList[i].name;
+    let date = commentsList[i].date;
+    let comment = commentsList[i].comment;
+    let containerEl = document.createElement("li");
+    containerEl.classList.add("comments__container");
+    let inputContainerEl = document.createElement("div");
+    inputContainerEl.classList.add("comments__input-container");
+    let nameDateContainerEl = document.createElement("div");
+    let logoEl = document.createElement("div");
+    nameDateContainerEl.classList.add("comments__name-date-container");
+    logoEl.classList.add("comments__logo");
+    const commentNameEl = createCommentElement("h4", name, "comments__name");
+    const commentDateEl = createCommentElement("h4", date, "comments__date");
+    nameDateContainerEl.appendChild(commentNameEl);
+    nameDateContainerEl.appendChild(commentDateEl);
+    const commentTextEl = createCommentElement(
+      "p",
+      comment,
+      "comments__content"
+    );
+    inputContainerEl.appendChild(nameDateContainerEl);
+    inputContainerEl.appendChild(commentTextEl);
+    containerEl.appendChild(logoEl);
+    containerEl.appendChild(inputContainerEl);
+    ulEl.appendChild(containerEl);
+  }
+}
+
+displayCommentList()
+
+let formEl = document.querySelector("form");
+
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const newComment = {
+    name: event.target.name.value,
+    comment: event.target.comment.value,
+    date: new Date().toDateString(),
+  };
+  commentsList.unshift(newComment);
+  displayCommentList();
+  formEl.reset();
+});
+

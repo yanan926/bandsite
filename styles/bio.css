@@ -759,6 +759,20 @@
   text-transform: uppercase;
   margin: 1rem 0 4px 0;
 }
+@media (min-width: 320px) {
+  .conversation__input-container label {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+}
+@media (min-width: 768px) {
+  .conversation__input-container label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+}
 .conversation__input-container input,
 .conversation__input-container textarea {
   border: #E1E1E1 1px solid;

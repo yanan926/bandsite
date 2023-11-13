@@ -459,11 +459,11 @@
 
 .conversation {
   @include mobile {
-    @include font-mobile-body-copy()
+    @include font-mobile-body-copy();
   }
 
   @include tablet {
-    @include font-desktop-body-copy()
+    @include font-desktop-body-copy();
   }
 
   h2 {
@@ -522,7 +522,7 @@
       }
       &:hover {
         background-color: $color-text-secondary-dark-black;
-      } 
+      }
     }
   }
 
@@ -557,6 +557,13 @@
       color: #afafaf;
       text-transform: uppercase;
       margin: 1rem 0 4px 0;
+
+      @include mobile {
+        @include font-mobile-labels-buttons();
+      }
+      @include tablet {
+        @include font-desktop-labels-buttons();
+      }
     }
     input,
     textarea {
@@ -585,11 +592,11 @@
 .comments {
   color: $color-text-primary-black;
   @include mobile {
-    @include font-mobile-body-copy()
+    @include font-mobile-body-copy();
   }
 
   @include tablet {
-    @include font-desktop-body-copy()
+    @include font-desktop-body-copy();
   }
   &__container {
     display: flex;
@@ -601,7 +608,6 @@
     @include tablet {
       padding: 2.25rem 0;
     }
-    
   }
 
   &__name-date-container {
