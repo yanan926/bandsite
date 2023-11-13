@@ -796,6 +796,10 @@
 .conversation__input-container textarea input {
   max-height: 3rem;
 }
+.conversation__input-container input.error-state, .conversation__input-container textarea.error-state {
+  border: red 1px solid;
+  outline: red;
+}
 .conversation ul li {
   list-style-type: none;
 }

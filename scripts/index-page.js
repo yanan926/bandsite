@@ -31,7 +31,8 @@ const ulEl = document.querySelector(".comments");
 function dateStringConvert() {
   const today = new Date();
   const yyyy = today.getFullYear();
-  let mm = today.getMonth() + 1; // Months start at 0!
+  // Months start at 0!
+  let mm = today.getMonth() + 1; 
   let dd = today.getDate();
   
   if (dd < 10) dd = '0' + dd;
@@ -83,6 +84,23 @@ formEl.addEventListener("submit", (event) => {
     date: dateStringConvert(),
   };
   commentsList.unshift(newComment);
+  const nameEl = document.querySelector('#name')
+  const commentEl = document.querySelector('#comment')
+  //remove the error state class
+  commentEl.classList.remove('error-state')
+  nameEl.classList.remove('error-state')
+
+  // check if the name and comment length is more than required
+  if(event.target.name.value.length <= 1) {
+    nameEl.classList.add('error-state')
+    alert("please enter your full name")
+    return
+  }
+  if(event.target.comment.value.length < 10) {
+    commentEl.classList.add('error-state')
+    alert("plese make your comment longer")
+    return
+  }
   displayCommentList();
   formEl.reset();
 });
