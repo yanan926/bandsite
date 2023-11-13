@@ -487,26 +487,38 @@
     flex-direction: column;
     align-items: center;
     color: #afafaf;
-    width: 70%;
     margin: auto;
+
+    @include mobile {
+      width: 90%;
+    }
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 40%;
+    }
 
     .button {
       text-transform: uppercase;
       height: 40px;
-      min-width: 9.375rem;
       border-radius: 4px;
-      background-color: $color-text-primary-black;
       color: $color-text-primary-white;
+      color: $color-text-secondary-mercury;
       align-self: flex-end;
       @include mobile {
         @include font-mobile-labels-buttons();
         margin: 1rem 0;
         padding: 0 1rem;
+        width: 100%;
       }
       @include tablet {
         @include font-desktop-labels-buttons();
         margin: 2.25rem 0;
         padding: 0 2rem;
+        width: 9.375rem;
       }
       &:hover {
         background-color: $color-text-secondary-dark-black;
@@ -517,6 +529,8 @@
   &__input-logo-container {
     display: flex;
     align-items: flex-end;
+    width: 100%;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -537,7 +551,7 @@
   &__input-container {
     display: flex;
     flex-direction: column;
-    width: 30rem;
+    flex-basis: 85%;
     @include font-desktop-body-copy();
     label {
       color: #afafaf;
@@ -579,7 +593,7 @@
   }
   &__container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     border-top: 1px solid $color-text-secondary-mercury;
     @include mobile {
       padding: 1rem 0;
@@ -604,7 +618,7 @@
   }
 
   &__input-container {
-    width: 30rem;
+    flex-basis: 85%;
   }
 
   &__logo {
