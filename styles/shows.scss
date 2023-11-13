@@ -161,7 +161,7 @@
       padding: 0 1rem;
       color: #ffffff;
     }
-    @include desktop {
+    @include tablet {
       @include font-desktop-sub-header();
       color: #ffffff;
       padding: 1rem 7rem;
@@ -188,7 +188,7 @@
           align-self: center;
         }
       }
-      @include desktop {
+      @include tablet {
         padding-right: 10%;
         align-items: center;
         justify-content: space-between;
@@ -303,7 +303,7 @@
         width: 100%;
         padding: 1rem 1rem 0;
       }
-      @include desktop {
+      @include tablet {
         @include font-desktop-labels-buttons();
         width: 30%;
         padding: 0;
@@ -359,8 +359,11 @@
   }
 
   &__table {
-    @include desktop {
-      @include font-desktop-footer-copy();
+    @include mobile{
+      @include font-desktop-body-copy();
+    }
+    @include tablet {
+      @include font-desktop-body-copy();
     }
   }
 
