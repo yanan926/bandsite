@@ -611,6 +611,15 @@
     display: flex;
     justify-content: space-between;
     border-top: 1px solid $color-text-secondary-mercury;
+    &:last-child {
+      border-bottom: 1px solid $color-text-secondary-mercury;
+      @include mobile {
+        margin-bottom: 1rem;
+      }
+      @include tablet {
+        margin-bottom: 3rem;
+      }
+    }
     @include mobile {
       padding: 1rem 0;
     }

@@ -832,6 +832,19 @@
   justify-content: space-between;
   border-top: 1px solid #E1E1E1;
 }
+.comments__container:last-child {
+  border-bottom: 1px solid #E1E1E1;
+}
+@media (min-width: 320px) {
+  .comments__container:last-child {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .comments__container:last-child {
+    margin-bottom: 3rem;
+  }
+}
 @media (min-width: 320px) {
   .comments__container {
     padding: 1rem 0;
