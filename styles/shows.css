@@ -377,6 +377,9 @@
   .shows tr th.shows__table-title-location {
     width: 20%;
   }
+  .shows tr th.shows__table-title-date {
+    width: 30%;
+  }
 }
 .shows tr th {
   text-align: left;
