@@ -257,6 +257,10 @@
       background-color: $color-text-secondary-mercury;
     }
 
+    &.table-row--selected {
+      background-color: $color-text-secondary-mercury;
+    }
+
     @include mobile {
       flex-direction: column;
       justify-content: flex-start;

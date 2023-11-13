@@ -340,6 +340,9 @@
 .shows tr:active {
   background-color: #E1E1E1;
 }
+.shows tr.table-row--selected {
+  background-color: #E1E1E1;
+}
 @media (min-width: 320px) {
   .shows tr {
     flex-direction: column;

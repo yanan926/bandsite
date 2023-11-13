@@ -25,7 +25,7 @@ const arr = [
     location: "San Francisco, CA",
   },
   {
-    date: "MWed Dec 15 2021",
+    date: "Wed Dec 15 2021",
     Venue: "Press Club",
     location: "San Francisco, CA",
   },
@@ -36,7 +36,6 @@ function createTh(title, styleName, responsiveStyle) {
   thEl.innerText = title;
   thEl.classList.add(styleName);
   thEl.classList.add(responsiveStyle);
-  console.log(thEl);
   return thEl;
 }
 
@@ -44,7 +43,6 @@ function createTd(content, styleName) {
   let tdEl = document.createElement("td");
   tdEl.innerText = content;
   tdEl.classList.add(styleName);
-  console.log(tdEl);
   return tdEl;
 }
 
@@ -54,7 +52,6 @@ function createButtonTd() {
   let buttonEl = document.createElement("button");
   buttonEl.innerText = "Buy tickets";
   tdEl.appendChild(buttonEl);
-  console.log(tdEl);
   return tdEl;
 }
 
@@ -82,4 +79,19 @@ function buildTable() {
   }
 }
 
+function addTrClickEvent() {
+  let trElList = document.querySelectorAll("tr");
+
+  for (let i = 0; i < trElList.length; i++) {
+    trElList[i].addEventListener("click", (e) => {
+      trElList.forEach((element) => {
+        element.classList.remove("table-row--selected");
+      });
+      e.currentTarget.classList.add("table-row--selected");
+      console.log(e.currentTarget);
+    });
+  }
+}
+
 buildTable();
+addTrClickEvent();
