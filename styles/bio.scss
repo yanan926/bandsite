@@ -458,6 +458,14 @@
 }
 
 .conversation {
+  @include mobile {
+    @include font-mobile-body-copy()
+  }
+
+  @include tablet {
+    @include font-desktop-body-copy()
+  }
+
   h2 {
     margin: 0;
     @include mobile {
@@ -484,6 +492,12 @@
 
     .button {
       text-transform: uppercase;
+      height: 40px;
+      min-width: 9.375rem;
+      border-radius: 4px;
+      background-color: $color-text-primary-black;
+      color: $color-text-primary-white;
+      align-self: flex-end;
       @include mobile {
         @include font-mobile-labels-buttons();
         margin: 1rem 0;
@@ -497,12 +511,6 @@
       &:hover {
         background-color: $color-text-secondary-dark-black;
       } 
-      height: 40px;
-      min-width: 9.375rem;
-      border-radius: 4px;
-      background-color: $color-text-primary-black;
-      color: $color-text-primary-white;
-      align-self: flex-end;
     }
   }
 
@@ -554,10 +562,6 @@
   ul li {
     list-style-type: none;
   }
-
-  &__divider {
-    border: 1px solid $color-text-secondary-mercury;
-  }
 }
 
 .conversation__logo--hidden {
@@ -566,11 +570,24 @@
 
 .comments {
   color: $color-text-primary-black;
+  @include mobile {
+    @include font-mobile-body-copy()
+  }
+
+  @include tablet {
+    @include font-desktop-body-copy()
+  }
   &__container {
     display: flex;
     justify-content: flex-end;
     border-top: 1px solid $color-text-secondary-mercury;
-    padding: 2.25rem 0;
+    @include mobile {
+      padding: 1rem 0;
+    }
+    @include tablet {
+      padding: 2.25rem 0;
+    }
+    
   }
 
   &__name-date-container {

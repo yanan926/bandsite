@@ -622,6 +622,22 @@
   }
 }
 
+@media (min-width: 320px) {
+  .conversation {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #323232;
+  }
+}
+@media (min-width: 768px) {
+  .conversation {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+  }
+}
 .conversation h2 {
   margin: 0;
 }
@@ -747,9 +763,6 @@
 .conversation ul li {
   list-style-type: none;
 }
-.conversation__divider {
-  border: 1px solid #E1E1E1;
-}
 
 .conversation__logo--hidden {
   visibility: hidden;
@@ -758,11 +771,36 @@
 .comments {
   color: #323232;
 }
+@media (min-width: 320px) {
+  .comments {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #323232;
+  }
+}
+@media (min-width: 768px) {
+  .comments {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+  }
+}
 .comments__container {
   display: flex;
   justify-content: flex-end;
   border-top: 1px solid #E1E1E1;
-  padding: 2.25rem 0;
+}
+@media (min-width: 320px) {
+  .comments__container {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 768px) {
+  .comments__container {
+    padding: 2.25rem 0;
+  }
 }
 .comments__name-date-container {
   display: flex;
