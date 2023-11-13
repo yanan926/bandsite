@@ -340,40 +340,6 @@
 .shows tr:active {
   background-color: #E1E1E1;
 }
-.shows tr th {
-  text-align: left;
-  text-transform: uppercase;
-  color: #AFAFAF;
-  font-weight: 400;
-}
-@media (min-width: 320px) {
-  .shows tr th {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
-    width: 100%;
-    padding: 1rem 1rem 0;
-  }
-}
-@media (min-width: 1280px) {
-  .shows tr th {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
-    width: 30%;
-    padding: 0;
-  }
-}
-@media (min-width: 320px) {
-  .shows tr td {
-    padding: 0 1rem;
-  }
-}
-@media (min-width: 768px) {
-  .shows tr td {
-    padding: 0;
-  }
-}
 @media (min-width: 320px) {
   .shows tr {
     flex-direction: column;
@@ -410,6 +376,54 @@
   .shows tr th.shows__table-title-venue,
   .shows tr th.shows__table-title-location {
     width: 20%;
+  }
+}
+.shows tr th {
+  text-align: left;
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-weight: 400;
+}
+@media (min-width: 320px) {
+  .shows tr th {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .shows tr th {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    width: 30%;
+    padding: 0;
+  }
+}
+@media (min-width: 320px) {
+  .shows tr td {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .shows tr td {
+    padding: 0;
+  }
+}
+@media (min-width: 320px) {
+  .shows .shows__table-title {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .shows .shows__table-title {
+    display: flex;
+  }
+  .shows .shows__table-title:hover {
+    background-color: #ffffff;
+    cursor: initial;
   }
 }
 .shows button {
@@ -451,6 +465,16 @@ tr .shows__table-date {
 }
 .shows-row-container {
   padding: 0 1rem;
+}
+@media (min-width: 320px) {
+  .shows .switch-style {
+    display: initial;
+  }
+}
+@media (min-width: 768px) {
+  .shows .switch-style {
+    display: none;
+  }
 }
 
 .footer {
