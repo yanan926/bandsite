@@ -1,3 +1,4 @@
+//Define the comments as an array
 let commentsList = [
   {
     name: "Connor Walton",
@@ -19,6 +20,7 @@ let commentsList = [
   },
 ];
 
+//create a function to make create comment element easier 
 function createCommentElement(elementType, text, className) {
   const commentEl = document.createElement(elementType);
   commentEl.classList.add(className);
@@ -28,6 +30,7 @@ function createCommentElement(elementType, text, className) {
 
 const ulEl = document.querySelector(".comments");
 
+//function to convert the date to a string in a correct format
 function dateStringConvert() {
   const today = new Date();
   const yyyy = today.getFullYear();
@@ -41,7 +44,9 @@ function dateStringConvert() {
   return formattedToday;
 }
 
+//a function used to render the array element as a li element
 function displayCommentList() {
+  //delete all elements in the old array
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
     let name = commentsList[i].name;
@@ -83,6 +88,7 @@ formEl.addEventListener("submit", (event) => {
     comment: event.target.comment.value,
     date: dateStringConvert(),
   };
+  //make the new array element as the first one in the array
   commentsList.unshift(newComment);
   const nameEl = document.querySelector('#name')
   const commentEl = document.querySelector('#comment')
@@ -90,7 +96,7 @@ formEl.addEventListener("submit", (event) => {
   commentEl.classList.remove('error-state')
   nameEl.classList.remove('error-state')
 
-  // check if the name and comment length is more than required
+  // check if the name is more than one character and comment length is more 10 charactors
   if(event.target.name.value.length <= 1) {
     nameEl.classList.add('error-state')
     alert("please enter your full name")

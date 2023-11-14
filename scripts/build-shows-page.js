@@ -1,3 +1,4 @@
+//declare the commets as an array
 const arr = [
   {
     date: "Mon Sept 06 2021",
@@ -31,6 +32,7 @@ const arr = [
   },
 ];
 
+//function used to create th element with text and style
 function createTh(title, styleName, responsiveStyle) {
   let thEl = document.createElement("th");
   thEl.innerText = title;
@@ -39,6 +41,7 @@ function createTh(title, styleName, responsiveStyle) {
   return thEl;
 }
 
+//function used to create td element with text and style
 function createTd(content, styleName) {
   let tdEl = document.createElement("td");
   tdEl.innerText = content;
@@ -46,6 +49,7 @@ function createTd(content, styleName) {
   return tdEl;
 }
 
+//function used to create button element with text and style
 function createButtonTd() {
   let tdEl = document.createElement("td");
   tdEl.classList.add("shows__table-content");
@@ -55,6 +59,7 @@ function createButtonTd() {
   return tdEl;
 }
 
+//function to create the table
 function buildTable() {
   let tableEl = document.querySelector("table");
   for (let i = 0; i < arr.length; i++) {
@@ -79,6 +84,7 @@ function buildTable() {
   }
 }
 
+//a funciton to make the row selected style
 function addTrClickEvent() {
   let trElList = document.querySelectorAll("tr");
 
@@ -88,7 +94,6 @@ function addTrClickEvent() {
         element.classList.remove("table-row--selected");
       });
       e.currentTarget.classList.add("table-row--selected");
-      console.log(e.currentTarget);
     });
   }
 }

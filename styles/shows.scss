@@ -136,7 +136,7 @@
     @include tablet {
       @include font-desktop-page-header();
       text-align: left;
-      padding: 0 3rem 1rem;
+      padding: 0 5% 1rem;
       color: #ffffff;
       span {
         @include font-desktop-section-header();
@@ -146,7 +146,7 @@
     @include desktop {
       @include font-desktop-page-header();
       text-align: left;
-      padding: 0 0 0 7rem;
+      padding: 0;
       color: #ffffff;
       width: 75%;
       span {
@@ -165,13 +165,13 @@
     @include tablet {
       @include font-desktop-sub-header();
       color: #ffffff;
-      padding: 1rem 3rem;
+      padding: 1rem 5% 0;
     }
 
     @include desktop {
       @include font-desktop-sub-header();
       color: #ffffff;
-      padding: 1rem 7rem;
+      padding: 0 10%;
     }
   }
 
@@ -204,19 +204,20 @@
           width: 25rem;
           height: 6rem;
           align-self: start;
-          margin-left: 3rem;
+          margin-left: 5%;
         }
       }
 
       @include desktop {
-        padding-right: 10%;
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
+        padding: 0 10%;
         iframe {
           width: 25rem;
           height: 80%;
           align-self: start;
+          margin-left: 0;
         }
       }
     }
@@ -237,13 +238,13 @@
   }
   @include tablet {
     flex-direction: column;
-    padding: 2.25rem;
+    padding: 2.25rem 5%;
     @include font-desktop-body-copy();
     justify-content:flex-start;
   }
   @include desktop {
     flex-direction: row;
-    padding: 2.25rem 7rem;
+    padding: 2.25rem 10%;
     @include font-desktop-body-copy();
     justify-content: space-between;
   }
