@@ -1,18 +1,23 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTPro.ttf") format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf"),
+    url("../assets/Font/alternative-files/AvenirNextLTPro.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProDemi.ttf") format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"),
+    url("../assets/Font/alternative-files/AvenirNextLTProDemi.ttf")
+      format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf") format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"),
+    url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf")
+      format("ttf");
   font-weight: 700;
   font-style: bold;
 }
@@ -84,15 +89,17 @@
     width: auto;
   }
 }
-.main-nav__item:hover, .main-nav__item-active {
+.main-nav__item:hover,
+.main-nav__item-active {
   border-bottom: 3px solid #fff;
 }
 .main-nav__item a {
-  color: #E1E1E1;
+  color: #e1e1e1;
   text-decoration: none;
 }
-.main-nav__item a:hover, .main-nav__item a.active {
-  color: #FFFFFF;
+.main-nav__item a:hover,
+.main-nav__item a.active {
+  color: #ffffff;
   font-weight: bold;
 }
 @media (min-width: 320px) {
@@ -320,7 +327,7 @@
 }
 
 .gallery {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .gallery h2 {
   margin: 0;
@@ -393,7 +400,7 @@
 }
 
 .footer {
-  color: #E1E1E1;
+  color: #e1e1e1;
   background-color: #323232;
   position: relative;
 }
@@ -424,7 +431,7 @@
     line-height: 32px;
     font-weight: 700;
     color: #323232;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 1.5rem 1rem 0 0;
     margin: 0;
   }
@@ -439,7 +446,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 3rem 1.125rem 2.25rem 0;
   }
 }
@@ -453,7 +460,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 3rem 2.25rem 2.25rem 0;
   }
 }
@@ -535,7 +542,7 @@
 }
 
 .footer__agent {
-  color: #E1E1E1;
+  color: #e1e1e1;
 }
 @media (min-width: 320px) {
   .footer__agent {
@@ -694,7 +701,7 @@
   text-transform: uppercase;
   height: 40px;
   border-radius: 4px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #323232;
   align-self: flex-end;
 }
@@ -775,17 +782,18 @@
 }
 .conversation__input-container input,
 .conversation__input-container textarea {
-  border: #E1E1E1 1px solid;
+  border: #e1e1e1 1px solid;
   border-radius: 4px;
   padding: 1rem;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .conversation__input-container input:focus,
 .conversation__input-container textarea:focus {
   border: #323232 1px solid;
   outline: #323232;
 }
-.conversation__input-container input::-moz-placeholder, .conversation__input-container textarea::-moz-placeholder {
+.conversation__input-container input::-moz-placeholder,
+.conversation__input-container textarea::-moz-placeholder {
   color: #323232;
 }
 .conversation__input-container input::placeholder,
@@ -796,7 +804,8 @@
 .conversation__input-container textarea input {
   max-height: 3rem;
 }
-.conversation__input-container input.error-state, .conversation__input-container textarea.error-state {
+.conversation__input-container input.error-state,
+.conversation__input-container textarea.error-state {
   border: red 1px solid;
   outline: red;
 }
@@ -830,10 +839,10 @@
 .comments__container {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #E1E1E1;
+  border-top: 1px solid #e1e1e1;
 }
 .comments__container:last-child {
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
 }
 @media (min-width: 320px) {
   .comments__container:last-child {
@@ -864,14 +873,14 @@
 }
 .comments__date {
   font-weight: 400;
-  color: #AFAFAF;
+  color: #afafaf;
 }
 .comments__input-container {
   flex-basis: 85%;
 }
 .comments__logo {
   border-radius: 50%;
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   margin: 0 1rem;
 }
 @media (min-width: 320px) {
@@ -885,4 +894,4 @@
     width: 3rem;
     height: 3rem;
   }
-}/*# sourceMappingURL=bio.css.map */
+} /*# sourceMappingURL=bio.css.map */
