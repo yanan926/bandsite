@@ -1,6 +1,7 @@
 @use "./partials/colors" as *;
 @use "./partials/mixins" as *;
 @use "./partials/breakpoints" as *;
+@use "./partials/font" as *;
 
 * {
   box-sizing: border-box;
