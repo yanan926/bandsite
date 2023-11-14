@@ -307,6 +307,7 @@
     line-height: 18px;
     font-weight: 400;
     color: #323232;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 768px) {
@@ -317,6 +318,18 @@
     line-height: 22px;
     font-weight: 400;
     color: #323232;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    padding: 2.25rem 7rem;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+    justify-content: space-between;
   }
 }
 @media (min-width: 320px) {

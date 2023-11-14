@@ -232,11 +232,19 @@
     flex-direction: column;
     padding: 1rem 0;
     @include font-mobile-body-copy();
+    justify-content:flex-start;
   }
   @include tablet {
     flex-direction: column;
     padding: 2.25rem;
     @include font-desktop-body-copy();
+    justify-content:flex-start;
+  }
+  @include desktop {
+    flex-direction: row;
+    padding: 2.25rem 7rem;
+    @include font-desktop-body-copy();
+    justify-content: space-between;
   }
 
   h2 {
