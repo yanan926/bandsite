@@ -647,7 +647,7 @@
     line-height: 32px;
     font-weight: 700;
     color: #323232;
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 0 1rem;
   }
 }
 @media (min-width: 768px) {
@@ -656,7 +656,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding: 3rem 2.25rem;
+    padding: 3rem 2.25rem 1rem;
   }
 }
 @media (min-width: 1280px) {

@@ -181,7 +181,7 @@
     text-align: center;
     color: #323232;
     text-align: left;
-    padding: 0 3rem;
+    padding: 0 3rem 1rem;
     color: #ffffff;
   }
   .hero h1 span {
@@ -229,6 +229,16 @@
     font-weight: 600;
     color: #323232;
     color: #ffffff;
+    padding: 1rem 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #323232;
+    color: #ffffff;
     padding: 1rem 7rem;
   }
 }
@@ -258,6 +268,19 @@
 }
 @media (min-width: 768px) {
   .hero__slogan-container {
+    padding-right: 0;
+    flex-direction: column;
+    align-self: start;
+  }
+  .hero__slogan-container iframe {
+    width: 25rem;
+    height: 6rem;
+    align-self: start;
+    margin-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__slogan-container {
     padding-right: 10%;
     align-items: center;
     justify-content: space-between;
@@ -266,6 +289,7 @@
   .hero__slogan-container iframe {
     width: 25rem;
     height: 80%;
+    align-self: start;
   }
 }
 .hero__slogan-text {
@@ -287,9 +311,8 @@
 }
 @media (min-width: 768px) {
   .shows {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 3rem 6rem;
+    flex-direction: column;
+    padding: 2.25rem;
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
@@ -320,6 +343,11 @@
   }
 }
 @media (min-width: 768px) {
+  .shows table {
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) {
   .shows table {
     width: 80%;
   }

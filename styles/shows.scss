@@ -135,7 +135,7 @@
     @include tablet {
       @include font-desktop-page-header();
       text-align: left;
-      padding: 0 3rem;
+      padding: 0 3rem 1rem;
       color: #ffffff;
       span {
         @include font-desktop-section-header();
@@ -164,6 +164,12 @@
     @include tablet {
       @include font-desktop-sub-header();
       color: #ffffff;
+      padding: 1rem 3rem;
+    }
+
+    @include desktop {
+      @include font-desktop-sub-header();
+      color: #ffffff;
       padding: 1rem 7rem;
     }
   }
@@ -188,7 +194,20 @@
           align-self: center;
         }
       }
+
       @include tablet {
+        padding-right: 0;
+        flex-direction: column;
+        align-self: start;
+        iframe {
+          width: 25rem;
+          height: 6rem;
+          align-self: start;
+          margin-left: 3rem;
+        }
+      }
+
+      @include desktop {
         padding-right: 10%;
         align-items: center;
         justify-content: space-between;
@@ -196,6 +215,7 @@
         iframe {
           width: 25rem;
           height: 80%;
+          align-self: start;
         }
       }
     }
@@ -214,9 +234,8 @@
     @include font-mobile-body-copy();
   }
   @include tablet {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 3rem 6rem;
+    flex-direction: column;
+    padding: 2.25rem;
     @include font-desktop-body-copy();
   }
 
@@ -236,6 +255,9 @@
       width: 100%;
     }
     @include tablet {
+      width: 100%;
+    }
+    @include desktop {
       width: 80%;
     }
   }
