@@ -26,7 +26,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 3%;
   }
 
   @include desktop {
@@ -34,7 +34,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 6rem;
+    padding: 0 7%;
   }
 
   img {
@@ -126,12 +126,12 @@
     }
     @include tablet {
       @include font-desktop-page-header();
-      padding: 0 3rem;
+      padding: 0 5%;
       color: #ffffff;
     }
     @include desktop {
       @include font-desktop-page-header();
-      padding: 0 7rem;
+      padding: 0 9%;
       color: #ffffff;
     }
   }
@@ -148,13 +148,13 @@
     @include tablet {
       @include font-desktop-section-header();
       padding-bottom: 2.25rem;
-      padding: 3rem 2.25rem;
+      padding: 3rem 5%;
     }
 
     @include desktop {
       @include font-desktop-section-header();
       padding-bottom: 2.25rem;
-      padding: 3rem 2.25rem 2.25rem 7rem;
+      padding: 3rem 9%;
     }
   }
 
@@ -243,11 +243,11 @@
     }
     @include tablet {
       @include font-desktop-section-header();
-      padding: 3rem 2.25rem;
+      padding: 3rem 5%;
     }
     @include desktop {
       @include font-desktop-section-header();
-      padding: 3rem 2.25rem 2.25rem 7rem;
+      padding: 3rem 9%;
     }
   }
   &__container {
@@ -294,11 +294,11 @@
     padding: 0 1rem;
   }
   @include tablet {
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 5%;
   }
 
   @include desktop {
-    padding: 0 7rem;
+    padding: 0 9%;
   }
   &__title-container {
     display: flex;
@@ -475,11 +475,11 @@
     }
     @include tablet {
       @include font-desktop-section-header();
-      padding: 3rem 2.25rem 1rem;
+      padding: 3rem 5%;
     }
     @include desktop {
       @include font-desktop-section-header();
-      padding: 3rem 2.25rem 1.25rem 7rem;
+      padding: 3rem 9%;
     }
   }
 

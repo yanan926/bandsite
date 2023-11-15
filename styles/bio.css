@@ -1,23 +1,18 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf"),
-    url("../assets/Font/alternative-files/AvenirNextLTPro.ttf") format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTPro.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"),
-    url("../assets/Font/alternative-files/AvenirNextLTProDemi.ttf")
-      format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProDemi.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"),
-    url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf")
-      format("ttf");
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf") format("ttf");
   font-weight: 700;
   font-style: bold;
 }
@@ -53,7 +48,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 3%;
   }
 }
 @media (min-width: 1280px) {
@@ -65,7 +60,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 6rem;
+    padding: 0 7%;
   }
 }
 .main-nav img {
@@ -89,17 +84,15 @@
     width: auto;
   }
 }
-.main-nav__item:hover,
-.main-nav__item-active {
+.main-nav__item:hover, .main-nav__item-active {
   border-bottom: 3px solid #fff;
 }
 .main-nav__item a {
-  color: #e1e1e1;
+  color: #E1E1E1;
   text-decoration: none;
 }
-.main-nav__item a:hover,
-.main-nav__item a.active {
-  color: #ffffff;
+.main-nav__item a:hover, .main-nav__item a.active {
+  color: #FFFFFF;
   font-weight: bold;
 }
 @media (min-width: 320px) {
@@ -176,7 +169,7 @@
     font-weight: 700;
     text-align: center;
     color: #323232;
-    padding: 0 3rem;
+    padding: 0 5%;
     color: #ffffff;
   }
 }
@@ -187,7 +180,7 @@
     font-weight: 700;
     text-align: center;
     color: #323232;
-    padding: 0 7rem;
+    padding: 0 9%;
     color: #ffffff;
   }
 }
@@ -212,7 +205,7 @@
     font-weight: 700;
     color: #323232;
     padding-bottom: 2.25rem;
-    padding: 3rem 2.25rem;
+    padding: 3rem 5%;
   }
 }
 @media (min-width: 1280px) {
@@ -222,7 +215,7 @@
     font-weight: 700;
     color: #323232;
     padding-bottom: 2.25rem;
-    padding: 3rem 2.25rem 2.25rem 7rem;
+    padding: 3rem 9%;
   }
 }
 .bio__img {
@@ -327,7 +320,7 @@
 }
 
 .gallery {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
 }
 .gallery h2 {
   margin: 0;
@@ -347,7 +340,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding: 3rem 2.25rem;
+    padding: 3rem 5%;
   }
 }
 @media (min-width: 1280px) {
@@ -356,7 +349,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding: 3rem 2.25rem 2.25rem 7rem;
+    padding: 3rem 9%;
   }
 }
 .gallery__container {
@@ -400,7 +393,7 @@
 }
 
 .footer {
-  color: #e1e1e1;
+  color: #E1E1E1;
   background-color: #323232;
   position: relative;
 }
@@ -411,12 +404,12 @@
 }
 @media (min-width: 768px) {
   .footer {
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 5%;
   }
 }
 @media (min-width: 1280px) {
   .footer {
-    padding: 0 7rem;
+    padding: 0 9%;
   }
 }
 .footer__title-container {
@@ -431,7 +424,7 @@
     line-height: 32px;
     font-weight: 700;
     color: #323232;
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 1.5rem 1rem 0 0;
     margin: 0;
   }
@@ -446,7 +439,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 3rem 1.125rem 2.25rem 0;
   }
 }
@@ -460,7 +453,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 3rem 2.25rem 2.25rem 0;
   }
 }
@@ -542,7 +535,7 @@
 }
 
 .footer__agent {
-  color: #e1e1e1;
+  color: #E1E1E1;
 }
 @media (min-width: 320px) {
   .footer__agent {
@@ -663,7 +656,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding: 3rem 2.25rem 1rem;
+    padding: 3rem 5%;
   }
 }
 @media (min-width: 1280px) {
@@ -672,7 +665,7 @@
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding: 3rem 2.25rem 1.25rem 7rem;
+    padding: 3rem 9%;
   }
 }
 .conversation__container {
@@ -701,7 +694,7 @@
   text-transform: uppercase;
   height: 40px;
   border-radius: 4px;
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #323232;
   align-self: flex-end;
 }
@@ -782,18 +775,17 @@
 }
 .conversation__input-container input,
 .conversation__input-container textarea {
-  border: #e1e1e1 1px solid;
+  border: #E1E1E1 1px solid;
   border-radius: 4px;
   padding: 1rem;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
 }
 .conversation__input-container input:focus,
 .conversation__input-container textarea:focus {
   border: #323232 1px solid;
   outline: #323232;
 }
-.conversation__input-container input::-moz-placeholder,
-.conversation__input-container textarea::-moz-placeholder {
+.conversation__input-container input::-moz-placeholder, .conversation__input-container textarea::-moz-placeholder {
   color: #323232;
 }
 .conversation__input-container input::placeholder,
@@ -804,8 +796,7 @@
 .conversation__input-container textarea input {
   max-height: 3rem;
 }
-.conversation__input-container input.error-state,
-.conversation__input-container textarea.error-state {
+.conversation__input-container input.error-state, .conversation__input-container textarea.error-state {
   border: red 1px solid;
   outline: red;
 }
@@ -839,10 +830,10 @@
 .comments__container {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #e1e1e1;
+  border-top: 1px solid #E1E1E1;
 }
 .comments__container:last-child {
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #E1E1E1;
 }
 @media (min-width: 320px) {
   .comments__container:last-child {
@@ -873,14 +864,14 @@
 }
 .comments__date {
   font-weight: 400;
-  color: #afafaf;
+  color: #AFAFAF;
 }
 .comments__input-container {
   flex-basis: 85%;
 }
 .comments__logo {
   border-radius: 50%;
-  background-color: #e1e1e1;
+  background-color: #E1E1E1;
   margin: 0 1rem;
 }
 @media (min-width: 320px) {
@@ -894,4 +885,4 @@
     width: 3rem;
     height: 3rem;
   }
-} /*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=bio.css.map */
