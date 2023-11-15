@@ -1,14 +1,20 @@
 class BandSiteApi {
   constructor(apikey) {
     this.apiKey = apikey;
-    this.baseUrl = "https://project-1-api.herokuapp.com/";
+    this.baseUrl = "https://project-1-api.herokuapp.com";
   }
 
   // get all commentss from api
   async getComments() {
-    const response = await axios.get(`${this.baseUrl}/comments`);
+    try {
+      const response = await axios.get(
+        `${this.baseUrl}/comments/?api_key=${this.apiKey}`
+      );
 
-    return response.data;
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   // post new comment to api - requires a comment object as its second argument
@@ -21,5 +27,11 @@ class BandSiteApi {
   }
 }
 
-const bandSiteApi = new BandSiteApi()
-bandSiteApi.getComments();
+async function getComments() {
+  const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
+  const bandSiteApi = new BandSiteApi(api);
+  const comments = await bandSiteApi.getComments();
+  console.log(comments);
+}
+
+getComments()
