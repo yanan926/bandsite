@@ -1,36 +1,47 @@
-//declare the commets as an array
-const arr = [
-  {
-    date: "Mon Sept 06 2021",
-    place: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    place: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    place: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021 ",
-    place: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    place: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    place: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const arr = [
+//   {
+//     date: "Mon Sept 06 2021",
+//     place: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 21 2021",
+//     place: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Oct 15 2021",
+//     place: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 06 2021 ",
+//     place: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 26 2021",
+//     place: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 15 2021",
+//     place: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
+
+import BandSiteApi from "./bandSiteApi.js";
+
+async function fetchShows() {
+  const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
+  const bandSiteApi = new BandSiteApi(api);
+  const showsList = await bandSiteApi.getShows();
+  showsList.forEach(show => show.date = new Date(show.date).toDateString())
+  return showsList;
+}
+let arr = await fetchShows()
+console.log(arr)
 
 //function used to create th element with text and style
 function createTh(title, styleName, responsiveStyle) {

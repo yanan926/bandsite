@@ -40,22 +40,11 @@ export class BandSiteApi {
       const response = await axios.get(
         `${this.baseUrl}/showdates/?api_key=${this.apiKey}`
       );
-      // const show = response.data.map(show => show.)
-      console.log(response.data)
       return response.data;
     } catch (err) {
       console.log(err);
     }
   }
 }
-
-
-async function fetchComments() {
-  const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
-  const bandSiteApi = new BandSiteApi(api);
-  const showdates = await bandSiteApi.getShows();
-  
-}
-
 
 export default BandSiteApi;
