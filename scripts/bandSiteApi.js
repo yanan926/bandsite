@@ -45,6 +45,17 @@ export class BandSiteApi {
       console.log(err);
     }
   }
+
+  async addLike(id) {
+    try {
+      const response = await axios.get(
+        `${this.baseUrl}/comments/${id}/like/?api_key=${this.apiKey}`
+      );
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
 
 export default BandSiteApi;

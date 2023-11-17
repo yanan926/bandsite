@@ -41,9 +41,14 @@ function displayCommentList() {
 
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
-    let name = commentsList[i].name;
-    let date = commentsList[i].date;
-    let comment = commentsList[i].comment;
+    let {name,date,comment,likes} = commentsList[i];
+    console.log(`comment: ${comment}likes: ${likes}`)
+
+    let buttonEl = document.createElement("button");
+    buttonEl.classList.add("comments__like-button")
+    buttonEl.type = "button"
+    buttonEl.innerText = "Like";
+    
     let containerEl = document.createElement("li");
     containerEl.classList.add("comments__container");
     let inputContainerEl = document.createElement("div");
@@ -53,16 +58,21 @@ function displayCommentList() {
     nameDateContainerEl.classList.add("comments__name-date-container");
     logoEl.classList.add("comments__logo");
     const commentNameEl = createCommentElement("h4", name, "comments__name");
+    const commentlikeEl = createCommentElement("span", ` ${likes} likes`, "comments__like");
     const commentDateEl = createCommentElement("h4", date, "comments__date");
-    nameDateContainerEl.appendChild(commentNameEl);
-    nameDateContainerEl.appendChild(commentDateEl);
+
+    nameDateContainerEl.appendChild(commentNameEl)
+    nameDateContainerEl.appendChild(commentDateEl)
+    
     const commentTextEl = createCommentElement(
       "p",
       comment,
       "comments__content"
     );
+    commentTextEl.appendChild(commentlikeEl)
     inputContainerEl.appendChild(nameDateContainerEl);
     inputContainerEl.appendChild(commentTextEl);
+    inputContainerEl.appendChild(buttonEl)
     containerEl.appendChild(logoEl);
     containerEl.appendChild(inputContainerEl);
     ulEl.appendChild(containerEl);

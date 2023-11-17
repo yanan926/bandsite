@@ -1,36 +1,3 @@
-// const arr = [
-//   {
-//     date: "Mon Sept 06 2021",
-//     place: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 21 2021",
-//     place: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Oct 15 2021",
-//     place: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 06 2021 ",
-//     place: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 26 2021",
-//     place: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Dec 15 2021",
-//     place: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 import BandSiteApi from "./bandSiteApi.js";
 
 async function fetchShows() {
@@ -75,9 +42,7 @@ function buildTable() {
   let tableEl = document.querySelector("table");
   for (let i = 0; i < arr.length; i++) {
     let trEl = document.createElement("tr");
-    let date = arr[i].date;
-    let place = arr[i].place;
-    let location = arr[i].location;
+    let {date, place, location} = arr[i]
     trEl.appendChild(
       createTh("Date", "shows__table-title-date", "switch-style")
     );

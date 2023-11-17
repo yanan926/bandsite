@@ -868,6 +868,8 @@
 }
 .comments__input-container {
   flex-basis: 85%;
+  display: flex;
+  flex-direction: column;
 }
 .comments__logo {
   border-radius: 50%;
@@ -885,4 +887,13 @@
     width: 3rem;
     height: 3rem;
   }
+}
+.comments__like {
+  font-size: 0.7rem;
+  margin-left: 1rem;
+  font-weight: 400;
+}
+.comments__like-button {
+  align-self: flex-end;
+  padding: 0.2rem;
 }/*# sourceMappingURL=bio.css.map */
