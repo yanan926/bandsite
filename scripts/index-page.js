@@ -1,26 +1,20 @@
-//Define the comments as an array
-let commentsList = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way,everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough.",
-  },
-];
+import BandSiteApi from "./bandSiteApi.js";
 
-//create a function to make create comment element easier 
+async function fetchComments() {
+  const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
+  const bandSiteApi = new BandSiteApi(api);
+  const commentsList = await bandSiteApi.getComments();
+  commentsList.forEach(
+    (comment) => (comment.date = dateStringConvert(new Date(comment.timestamp)))
+  );
+  return commentsList;
+}
+
+let commentsList = await fetchComments();
+
+const ulEl = document.querySelector(".comments");
+
+//create a function to make create comment element easier
 function createCommentElement(elementType, text, className) {
   const commentEl = document.createElement(elementType);
   commentEl.classList.add(className);
@@ -28,16 +22,13 @@ function createCommentElement(elementType, text, className) {
   return commentEl;
 }
 
-const ulEl = document.querySelector(".comments");
-
 //function to convert the date to a string in a correct format
-function dateStringConvert() {
-  const today = new Date();
+function dateStringConvert(today = new Date()) {
   const yyyy = today.getFullYear();
   // Months start at 0!
-  let mm = today.getMonth() + 1; 
+  let mm = today.getMonth() + 1;
   let dd = today.getDate();
-  
+
   if (dd < 10) dd = '0' + dd;
   if (mm < 10) mm = '0' + mm;
   const formattedToday = mm + '/' + dd + '/' + yyyy;
@@ -47,6 +38,7 @@ function dateStringConvert() {
 //a function used to render the array element as a li element
 function displayCommentList() {
   //delete all elements in the old array
+
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
     let name = commentsList[i].name;
@@ -77,7 +69,7 @@ function displayCommentList() {
   }
 }
 
-displayCommentList()
+displayCommentList();
 
 let formEl = document.querySelector("form");
 
@@ -90,24 +82,23 @@ formEl.addEventListener("submit", (event) => {
   };
   //make the new array element as the first one in the array
   commentsList.unshift(newComment);
-  const nameEl = document.querySelector('#name')
-  const commentEl = document.querySelector('#comment')
+  const nameEl = document.querySelector("#name");
+  const commentEl = document.querySelector("#comment");
   //remove the error state class
-  commentEl.classList.remove('error-state')
-  nameEl.classList.remove('error-state')
+  commentEl.classList.remove("error-state");
+  nameEl.classList.remove("error-state");
 
   // check if the name is more than one character and comment length is more 10 charactors
-  if(event.target.name.value.length <= 1) {
-    nameEl.classList.add('error-state')
-    alert("please enter your full name")
-    return
+  if (event.target.name.value.length <= 1) {
+    nameEl.classList.add("error-state");
+    alert("please enter your full name");
+    return;
   }
-  if(event.target.comment.value.length < 10) {
-    commentEl.classList.add('error-state')
-    alert("plese make your comment longer")
-    return
+  if (event.target.comment.value.length < 10) {
+    commentEl.classList.add("error-state");
+    alert("plese make your comment longer");
+    return;
   }
   displayCommentList();
   formEl.reset();
 });
-
