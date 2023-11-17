@@ -48,7 +48,7 @@ function displayCommentList() {
     buttonEl.classList.add("comments__like-button")
     buttonEl.type = "button"
     buttonEl.innerText = "Like";
-    
+
     let containerEl = document.createElement("li");
     containerEl.classList.add("comments__container");
     let inputContainerEl = document.createElement("div");

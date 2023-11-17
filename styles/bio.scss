@@ -669,8 +669,10 @@
   }
 
   &__like-button {
-    // margin-top: 0.5rem;
     align-self: flex-end;
     padding: 0.2rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

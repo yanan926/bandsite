@@ -896,4 +896,7 @@
 .comments__like-button {
   align-self: flex-end;
   padding: 0.2rem;
+}
+.comments__like-button:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */
