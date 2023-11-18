@@ -893,15 +893,28 @@
   margin-left: 1rem;
   font-weight: 400;
 }
-.comments__like-button, .comments__delete-button {
-  padding: 0.2rem;
+.comments__like-logo, .comments__delete-logo {
+  border-radius: 3px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.1rem;
 }
-.comments__like-button:hover, .comments__delete-button:hover {
+.comments__like-logo:hover, .comments__delete-logo:hover {
   cursor: pointer;
 }
 .comments__like-button {
   margin-right: 1rem;
 }
-.comments__button-container {
+.comments__icon-container {
   align-self: flex-end;
+  margin-top: 0.5rem;
+}
+.comments__like-icon, .comments__delete-icon {
+  height: 1rem;
+}
+.comments__like-icon:hover, .comments__delete-icon:hover {
+  cursor: pointer;
+}
+.comments__like-icon {
+  margin-right: 1rem;
 }/*# sourceMappingURL=bio.css.map */

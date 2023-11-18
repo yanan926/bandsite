@@ -19,45 +19,42 @@ function dateStringConvert(today = new Date()) {
   let mm = today.getMonth() + 1;
   let dd = today.getDate();
 
-  if (dd < 10) dd = '0' + dd;
-  if (mm < 10) mm = '0' + mm;
-  const formattedToday = mm + '/' + dd + '/' + yyyy;
+  if (dd < 10) dd = "0" + dd;
+  if (mm < 10) mm = "0" + mm;
+  const formattedToday = mm + "/" + dd + "/" + yyyy;
   return formattedToday;
 }
 
-
 //a function used to render the array element as a li element
-  async function displayCommentList() {
+async function displayCommentList() {
+  let commentsList = await bandSiteApi.getComments();
 
-    let commentsList = await bandSiteApi.getComments();
+  //sort the comments list according to the timestamp to make the latest review on the top
+  commentsList.sort((a, b) => b.timestamp - a.timestamp);
 
-    //sort the comments list according to the timestamp to make the latest review on the top
-    commentsList.sort((a, b) => b.timestamp - a.timestamp)
-
-
-    commentsList.forEach(
-      (comment) => (comment.date = dateStringConvert(new Date(comment.timestamp)))
-    );
+  commentsList.forEach(
+    (comment) => (comment.date = dateStringConvert(new Date(comment.timestamp)))
+  );
 
   //delete all elements in the old array
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
-    let {name,date,comment,likes, id} = commentsList[i];
+    let { name, date, comment, likes, id } = commentsList[i];
 
-    let buttonContainer = document.createElement('div')
-    buttonContainer.classList.add('comments__button-container')
-    let likeButtonEl = document.createElement("button");
-    likeButtonEl.classList.add("comments__like-button")
-    likeButtonEl.type = "button"
-    likeButtonEl.innerText = "Like"
+    let logoContainerEl = document.createElement("div");
+    logoContainerEl.classList.add("comments__icon-container");
 
-    let deleteButtonEl = document.createElement("button");
-    deleteButtonEl.classList.add("comments__delete-button")
-    deleteButtonEl.type = "button"
-    deleteButtonEl.innerText = "Delete";
+    const likeLogoEl = createCommentElement("img", "", "comments__like-icon");
+    likeLogoEl.src = "../assets/Icons/SVG/icon-like.svg";
 
-    buttonContainer.appendChild(likeButtonEl)
-    buttonContainer.appendChild(deleteButtonEl)
+    const deleteLogoEl = createCommentElement(
+      "img",
+      "",
+      "comments__delete-icon"
+    );
+    deleteLogoEl.src = "../assets/Icons/SVG/icon-delete.svg";
+    logoContainerEl.appendChild(likeLogoEl);
+    logoContainerEl.appendChild(deleteLogoEl);
 
     let containerEl = document.createElement("li");
     containerEl.classList.add("comments__container");
@@ -70,33 +67,36 @@ function dateStringConvert(today = new Date()) {
     const commentNameEl = createCommentElement("h4", name, "comments__name");
 
     //add the likes element as spans
-    const commentlikeEl = createCommentElement("span", ` ${likes} likes`, "comments__like");
+    const commentlikeEl = createCommentElement(
+      "span",
+      ` ${likes} likes`,
+      "comments__like"
+    );
+
     const commentDateEl = createCommentElement("h4", date, "comments__date");
 
+    likeLogoEl.addEventListener("click", async () => {
+      const likesNumber = await bandSiteApi.addLike(id);
+      (commentlikeEl.innerText = ` ${likesNumber} likes`), "comments__like";
+    });
 
-    likeButtonEl.addEventListener('click', async ()=> {
-      const likesNumber = await bandSiteApi.addLike(id)
-      commentlikeEl.innerText = ` ${likesNumber} likes`, "comments__like"
-    })
+    deleteLogoEl.addEventListener("click", async () => {
+      await bandSiteApi.deleteComment(id);
+      displayCommentList();
+    });
 
-    deleteButtonEl.addEventListener('click', async ()=>{
-      await bandSiteApi.deleteComment(id)
-      displayCommentList()
-    })
+    nameDateContainerEl.appendChild(commentNameEl);
+    nameDateContainerEl.appendChild(commentDateEl);
 
-    nameDateContainerEl.appendChild(commentNameEl)
-    nameDateContainerEl.appendChild(commentDateEl)
-    
     const commentTextEl = createCommentElement(
       "p",
       comment,
       "comments__content"
     );
-    commentTextEl.appendChild(commentlikeEl)
+    commentTextEl.appendChild(commentlikeEl);
     inputContainerEl.appendChild(nameDateContainerEl);
     inputContainerEl.appendChild(commentTextEl);
-    inputContainerEl.appendChild(buttonContainer)
-    // inputContainerEl.appendChild(deleteButtonEl)
+    inputContainerEl.appendChild(logoContainerEl);
     containerEl.appendChild(logoEl);
     containerEl.appendChild(inputContainerEl);
     ulEl.appendChild(containerEl);
@@ -116,18 +116,18 @@ formEl.addEventListener("submit", async (event) => {
   if (event.target.name.value.length <= 1) {
     nameEl.classList.add("error-state");
     alert("please enter your full name");
-    return
+    return;
   }
   if (event.target.comment.value.length < 10) {
     commentEl.classList.add("error-state");
     alert("plese make your comment longer");
-    return
+    return;
   }
 
-  await bandSiteApi.postComments(
-    {name: event.target.name.value,
-      comment: event.target.comment.value
-    })
+  await bandSiteApi.postComments({
+    name: event.target.name.value,
+    comment: event.target.comment.value,
+  });
 
   //remove the error state class
   commentEl.classList.remove("error-state");
