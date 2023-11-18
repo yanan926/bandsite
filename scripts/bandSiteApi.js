@@ -10,7 +10,6 @@ export class BandSiteApi {
       const response = await axios.get(
         `${this.baseUrl}/comments/?api_key=${this.apiKey}`
       );
-
       return response.data;
     } catch (err) {
       console.log(err);
@@ -29,7 +28,6 @@ export class BandSiteApi {
           },
         }
       );
-      console.log(response);
     } catch (err) {
       console.log(err);
     }
@@ -48,8 +46,19 @@ export class BandSiteApi {
 
   async addLike(id) {
     try {
-      const response = await axios.get(
+      const response = await axios.put(
         `${this.baseUrl}/comments/${id}/like/?api_key=${this.apiKey}`
+      );
+      return response.data.likes;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async deleteComment(id) {
+    try {
+      const response = await axios.delete(
+        `${this.baseUrl}/comments/${id}/?api_key=${this.apiKey}`
       );
       return response.data;
     } catch (err) {

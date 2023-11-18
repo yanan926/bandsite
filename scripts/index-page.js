@@ -1,17 +1,7 @@
 import BandSiteApi from "./bandSiteApi.js";
 
-async function fetchComments() {
-  const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
-  const bandSiteApi = new BandSiteApi(api);
-  const commentsList = await bandSiteApi.getComments();
-  commentsList.forEach(
-    (comment) => (comment.date = dateStringConvert(new Date(comment.timestamp)))
-  );
-  return commentsList;
-}
-
-let commentsList = await fetchComments();
-
+const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
+const bandSiteApi = new BandSiteApi(api);
 const ulEl = document.querySelector(".comments");
 
 //create a function to make create comment element easier
@@ -35,19 +25,34 @@ function dateStringConvert(today = new Date()) {
   return formattedToday;
 }
 
-//a function used to render the array element as a li element
-function displayCommentList() {
-  //delete all elements in the old array
 
+//a function used to render the array element as a li element
+  async function displayCommentList() {
+
+    let commentsList = await bandSiteApi.getComments();
+
+    //sort the comments list according to the timestamp to make the latest review on the top
+    commentsList.sort((a, b) => b.timestamp - a.timestamp)
+
+
+    commentsList.forEach(
+      (comment) => (comment.date = dateStringConvert(new Date(comment.timestamp)))
+    );
+
+  //delete all elements in the old array
   ulEl.textContent = "";
   for (let i = 0; i < commentsList.length; i++) {
-    let {name,date,comment,likes} = commentsList[i];
-    console.log(`comment: ${comment}likes: ${likes}`)
+    let {name,date,comment,likes, id} = commentsList[i];
 
     let buttonEl = document.createElement("button");
     buttonEl.classList.add("comments__like-button")
     buttonEl.type = "button"
-    buttonEl.innerText = "Like";
+    buttonEl.innerText = "Like"
+
+    let deleteButtonEl = document.createElement("button");
+    deleteButtonEl.classList.add("comments__delete-button")
+    deleteButtonEl.type = "button"
+    deleteButtonEl.innerText = "Delete";
 
     let containerEl = document.createElement("li");
     containerEl.classList.add("comments__container");
@@ -58,8 +63,21 @@ function displayCommentList() {
     nameDateContainerEl.classList.add("comments__name-date-container");
     logoEl.classList.add("comments__logo");
     const commentNameEl = createCommentElement("h4", name, "comments__name");
+
+    //add the likes element as spans
     const commentlikeEl = createCommentElement("span", ` ${likes} likes`, "comments__like");
     const commentDateEl = createCommentElement("h4", date, "comments__date");
+
+
+    buttonEl.addEventListener('click', async ()=> {
+      const likesNumber = await bandSiteApi.addLike(id)
+      commentlikeEl.innerText = ` ${likesNumber} likes`, "comments__like"
+    })
+
+    deleteButtonEl.addEventListener('click', async ()=>{
+      await bandSiteApi.deleteComment(id)
+      displayCommentList()
+    })
 
     nameDateContainerEl.appendChild(commentNameEl)
     nameDateContainerEl.appendChild(commentDateEl)
@@ -73,6 +91,7 @@ function displayCommentList() {
     inputContainerEl.appendChild(nameDateContainerEl);
     inputContainerEl.appendChild(commentTextEl);
     inputContainerEl.appendChild(buttonEl)
+    inputContainerEl.appendChild(deleteButtonEl)
     containerEl.appendChild(logoEl);
     containerEl.appendChild(inputContainerEl);
     ulEl.appendChild(containerEl);
@@ -83,32 +102,31 @@ displayCommentList();
 
 let formEl = document.querySelector("form");
 
-formEl.addEventListener("submit", (event) => {
+formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const newComment = {
-    name: event.target.name.value,
-    comment: event.target.comment.value,
-    date: dateStringConvert(),
-  };
-  //make the new array element as the first one in the array
-  commentsList.unshift(newComment);
   const nameEl = document.querySelector("#name");
   const commentEl = document.querySelector("#comment");
-  //remove the error state class
-  commentEl.classList.remove("error-state");
-  nameEl.classList.remove("error-state");
 
   // check if the name is more than one character and comment length is more 10 charactors
   if (event.target.name.value.length <= 1) {
     nameEl.classList.add("error-state");
     alert("please enter your full name");
-    return;
+    return
   }
   if (event.target.comment.value.length < 10) {
     commentEl.classList.add("error-state");
     alert("plese make your comment longer");
-    return;
+    return
   }
+
+  await bandSiteApi.postComments(
+    {name: event.target.name.value,
+      comment: event.target.comment.value
+    })
+
+  //remove the error state class
+  commentEl.classList.remove("error-state");
+  nameEl.classList.remove("error-state");
   displayCommentList();
   formEl.reset();
 });
