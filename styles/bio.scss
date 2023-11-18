@@ -668,11 +668,18 @@
     font-weight: 400;
   }
 
-  &__like-button {
-    align-self: flex-end;
+  &__like-button, &__delete-button {
     padding: 0.2rem;
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &__like-button {
+    margin-right: 1rem;
+  }
+
+  &__button-container {
+    align-self: flex-end;
   }
 }

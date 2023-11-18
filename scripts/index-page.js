@@ -44,15 +44,20 @@ function dateStringConvert(today = new Date()) {
   for (let i = 0; i < commentsList.length; i++) {
     let {name,date,comment,likes, id} = commentsList[i];
 
-    let buttonEl = document.createElement("button");
-    buttonEl.classList.add("comments__like-button")
-    buttonEl.type = "button"
-    buttonEl.innerText = "Like"
+    let buttonContainer = document.createElement('div')
+    buttonContainer.classList.add('comments__button-container')
+    let likeButtonEl = document.createElement("button");
+    likeButtonEl.classList.add("comments__like-button")
+    likeButtonEl.type = "button"
+    likeButtonEl.innerText = "Like"
 
     let deleteButtonEl = document.createElement("button");
     deleteButtonEl.classList.add("comments__delete-button")
     deleteButtonEl.type = "button"
     deleteButtonEl.innerText = "Delete";
+
+    buttonContainer.appendChild(likeButtonEl)
+    buttonContainer.appendChild(deleteButtonEl)
 
     let containerEl = document.createElement("li");
     containerEl.classList.add("comments__container");
@@ -69,7 +74,7 @@ function dateStringConvert(today = new Date()) {
     const commentDateEl = createCommentElement("h4", date, "comments__date");
 
 
-    buttonEl.addEventListener('click', async ()=> {
+    likeButtonEl.addEventListener('click', async ()=> {
       const likesNumber = await bandSiteApi.addLike(id)
       commentlikeEl.innerText = ` ${likesNumber} likes`, "comments__like"
     })
@@ -90,8 +95,8 @@ function dateStringConvert(today = new Date()) {
     commentTextEl.appendChild(commentlikeEl)
     inputContainerEl.appendChild(nameDateContainerEl);
     inputContainerEl.appendChild(commentTextEl);
-    inputContainerEl.appendChild(buttonEl)
-    inputContainerEl.appendChild(deleteButtonEl)
+    inputContainerEl.appendChild(buttonContainer)
+    // inputContainerEl.appendChild(deleteButtonEl)
     containerEl.appendChild(logoEl);
     containerEl.appendChild(inputContainerEl);
     ulEl.appendChild(containerEl);

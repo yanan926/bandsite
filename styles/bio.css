@@ -893,10 +893,15 @@
   margin-left: 1rem;
   font-weight: 400;
 }
-.comments__like-button {
-  align-self: flex-end;
+.comments__like-button, .comments__delete-button {
   padding: 0.2rem;
 }
-.comments__like-button:hover {
+.comments__like-button:hover, .comments__delete-button:hover {
   cursor: pointer;
+}
+.comments__like-button {
+  margin-right: 1rem;
+}
+.comments__button-container {
+  align-self: flex-end;
 }/*# sourceMappingURL=bio.css.map */
