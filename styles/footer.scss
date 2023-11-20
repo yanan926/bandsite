@@ -10,12 +10,18 @@
   padding: 0 1rem;
 
   @include tablet {
-    padding: 0 0 0 3rem;
+    padding: 0 3rem;
   }
 
   @include desktop {
-    padding: 0 7rem;
+    padding: 0 10%;
   }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__title-container {
     display: flex;
       flex-direction: column;
@@ -64,24 +70,22 @@
   }
 
   &__logo {
-    position: absolute;
-      bottom: 5rem;
-      left: 1rem;
-    
-
+    display: none;
     @include tablet {
-      top: 4rem;
-      left: 38rem;
+      display: inherit;
     }
-    @include desktop {
-      top: 4rem;
-      left: 65rem;
+  }
+
+  &__logo-visiable-mobile {
+    display: inherit;
+    @include tablet {
+      display: none;
     }
   }
 
   &__copy-right {
       @include font-mobile-footer-copy();
-      padding: 2rem 0 1rem;
+      padding: 1rem 0;
     
     @include tablet {
       @include font-desktop-footer-copy();
