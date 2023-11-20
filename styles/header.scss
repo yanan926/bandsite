@@ -1,0 +1,87 @@
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+@use "./partials/breakpoints" as *;
+@use "./partials/font" as *;
+
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next";
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav {
+  background-color: $color-text-primary-black;
+  display: flex;
+  @include mobile {
+    @include font-mobile-body-copy();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+  }
+
+  @include tablet {
+    @include font-desktop-body-copy();
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 3%;
+  }
+
+  @include desktop {
+    @include font-desktop-body-copy();
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 7%;
+  }
+
+  img {
+    max-height: 1.25rem;
+    padding: 0 1rem;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-basis: 1;
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__item {
+    &:hover,
+    &-active {
+      border-bottom: 3px solid #fff;
+    }
+    a {
+      color: $color-text-secondary-mercury;
+      &:hover,
+      &.active {
+        color: $color-text-primary-white;
+        font-weight: bold;
+      }
+      text-decoration: none;
+    }
+    @include mobile {
+      text-align: center;
+      width: 50%;
+      padding: 1rem 0;
+      margin: 0;
+    }
+
+    @include tablet {
+      text-align: start;
+      width: auto;
+      padding: 2rem 0;
+      margin: 0 1rem;
+    }
+  }
+}
+

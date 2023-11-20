@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTPro.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProDemi.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/Font/alternative-files/AvenirNextLTProBold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: bold;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next";
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav {
+  background-color: #323232;
+  display: flex;
+}
+@media (min-width: 320px) {
+  .main-nav {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #323232;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 3%;
+  }
+}
+@media (min-width: 1280px) {
+  .main-nav {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 7%;
+  }
+}
+.main-nav img {
+  max-height: 1.25rem;
+  padding: 0 1rem;
+}
+.main-nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-basis: 1;
+}
+@media (min-width: 320px) {
+  .main-nav__list {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav__list {
+    width: auto;
+  }
+}
+.main-nav__item:hover, .main-nav__item-active {
+  border-bottom: 3px solid #fff;
+}
+.main-nav__item a {
+  color: #E1E1E1;
+  text-decoration: none;
+}
+.main-nav__item a:hover, .main-nav__item a.active {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+@media (min-width: 320px) {
+  .main-nav__item {
+    text-align: center;
+    width: 50%;
+    padding: 1rem 0;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav__item {
+    text-align: start;
+    width: auto;
+    padding: 2rem 0;
+    margin: 0 1rem;
+  }
+}/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,63 @@
+.footer__agent {
+  color: $color-text-secondary-mercury;
+  @include mobile {
+    padding-right: 0;
+  }
+  @include tablet {
+    padding-right: 2.25rem;
+  }
+  @include desktop {
+    padding-right: 3rem;
+  }
+  p {
+    margin: 0;
+  }
+  &--name {
+    @include mobile {
+      @include font-mobile-footer-copy();
+      font-weight: 600;
+      padding-bottom: 1rem;
+    }
+    @include tablet {
+      @include font-desktop-labels-buttons();
+      padding-bottom: 2.25rem;
+    }
+  }
+  &--address {
+    @include mobile {
+      @include font-mobile-footer-copy();
+      padding-bottom: 1rem;
+      display: block;
+    }
+    @include tablet {
+      @include font-desktop-footer-copy();
+      padding-bottom: 2.25rem;
+    }
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &--email {
+    @include mobile {
+      @include font-mobile-footer-copy();
+      padding-bottom: 2rem;
+      display: block;
+    }
+    @include tablet {
+      @include font-desktop-footer-copy();
+      padding-bottom: 0;
+      display: block;
+    }
+
+    @include desktop {
+      @include font-desktop-footer-copy();
+      padding-bottom: 2.25rem;
+      display: block;
+    }
+  }
+}
+
