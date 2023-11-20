@@ -13,9 +13,7 @@
 .hero {
   background: url(../assets/Images/hero-bio.jpg) top;
   background-size: cover;
-  @include mobile {
-    height: 16rem;
-  }
+  height: 16rem;
 
   @include tablet {
     height: 30rem;
@@ -44,11 +42,10 @@
     position: absolute;
     bottom: 50%;
     transform: translateY(50%);
-    @include mobile {
-      @include font-mobile-page-header();
-      padding: 0 1rem;
-      color: #ffffff;
-    }
+    @include font-mobile-page-header();
+    padding: 0 1rem;
+    color: #ffffff;
+
     @include tablet {
       @include font-desktop-page-header();
       padding: 0 5%;
@@ -65,11 +62,10 @@
 .bio {
   h2 {
     margin: 0;
-    @include mobile {
-      @include font-mobile-section-header();
-      padding-bottom: 1rem;
-      padding: 1.5rem 1rem 1rem 1rem;
-    }
+    @include font-mobile-section-header();
+    padding-bottom: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+
     @include tablet {
       @include font-desktop-section-header();
       padding-bottom: 2.25rem;
@@ -86,10 +82,9 @@
   &__img {
     margin: auto;
     display: block;
-    @include mobile {
-      padding-bottom: 1rem;
-      width: 90%;
-    }
+    padding-bottom: 1rem;
+    width: 90%;
+
     @include tablet {
       padding-bottom: 2.25rem;
       width: 80%;
@@ -101,12 +96,11 @@
   }
 
   h3 {
-    @include mobile {
-      width: 90%;
-      margin: 0 auto;
-      @include font-mobile-sub-header();
-      padding-bottom: 1rem;
-    }
+    width: 90%;
+    margin: 0 auto;
+    @include font-mobile-sub-header();
+    padding-bottom: 1rem;
+
     @include tablet {
       width: 70%;
       margin: 0 auto;
@@ -116,12 +110,10 @@
   }
 
   h4 {
-    @include mobile {
-      @include font-mobile-sub-header();
-      width: 90%;
-      padding-bottom: 1.5rem;
-      margin: 0 auto;
-    }
+    @include font-mobile-sub-header();
+    width: 90%;
+    padding-bottom: 1.5rem;
+    margin: 0 auto;
 
     @include tablet {
       @include font-desktop-labels-buttons();
@@ -135,15 +127,13 @@
 .bio__desc {
   display: flex;
   margin: auto;
-  @include mobile {
-    width: 90%;
-    padding-bottom: 1.5rem;
-    justify-content: center;
-    flex-direction: column;
-    @include font-mobile-body-copy();
-    &--paragraph1 {
-      padding: 0 0 1.5rem 0;
-    }
+  width: 90%;
+  padding-bottom: 1.5rem;
+  justify-content: center;
+  flex-direction: column;
+  @include font-mobile-body-copy();
+  &--paragraph1 {
+    padding: 0 0 1.5rem 0;
   }
 
   @include tablet {
@@ -162,10 +152,9 @@
   background-color: $color-text-secondary-alabaster;
   h2 {
     margin: 0;
-    @include mobile {
-      @include font-mobile-section-header();
-      padding: 1.5rem 1rem 1rem 1rem;
-    }
+    @include font-mobile-section-header();
+    padding: 1.5rem 1rem 1rem 1rem;
+
     @include tablet {
       @include font-desktop-section-header();
       padding: 3rem 5%;
@@ -177,13 +166,11 @@
   }
   &__container {
     display: flex;
-    @include mobile {
-      flex-direction: column;
-      align-items: center;
-      &--img {
-        padding-bottom: 1.5rem;
-        width: 90%;
-      }
+    flex-direction: column;
+    align-items: center;
+    &--img {
+      padding-bottom: 1.5rem;
+      width: 90%;
     }
 
     @include tablet {
@@ -213,9 +200,7 @@
 }
 
 .conversation {
-  @include mobile {
-    @include font-mobile-body-copy();
-  }
+  @include font-mobile-body-copy();
 
   @include tablet {
     @include font-desktop-body-copy();
@@ -223,10 +208,9 @@
 
   h2 {
     margin: 0;
-    @include mobile {
-      @include font-mobile-section-header();
-      padding: 1.5rem 1rem 0 1rem;
-    }
+    @include font-mobile-section-header();
+    padding: 1.5rem 1rem 0 1rem;
+
     @include tablet {
       @include font-desktop-section-header();
       padding: 3rem 5%;
@@ -243,10 +227,7 @@
     align-items: center;
     color: #afafaf;
     margin: auto;
-
-    @include mobile {
-      width: 90%;
-    }
+    width: 90%;
 
     @include tablet {
       width: 80%;
@@ -263,12 +244,11 @@
       color: $color-text-primary-white;
       background-color: $color-text-primary-black;
       align-self: flex-end;
-      @include mobile {
-        @include font-mobile-labels-buttons();
-        margin: 1rem 0;
-        padding: 0 1rem;
-        width: 100%;
-      }
+      @include font-mobile-labels-buttons();
+      margin: 1rem 0;
+      padding: 0 1rem;
+      width: 100%;
+
       @include tablet {
         @include font-desktop-labels-buttons();
         margin: 2.25rem 0;
@@ -289,10 +269,9 @@
   }
 
   &__logo {
-    @include mobile {
-      width: 2.25rem;
-      height: 2.25rem;
-    }
+    width: 2.25rem;
+    height: 2.25rem;
+
     @include tablet {
       width: 3rem;
       height: 3rem;
@@ -312,10 +291,8 @@
       color: #afafaf;
       text-transform: uppercase;
       margin: 1rem 0 4px 0;
+      @include font-mobile-labels-buttons();
 
-      @include mobile {
-        @include font-mobile-labels-buttons();
-      }
       @include tablet {
         @include font-desktop-labels-buttons();
       }
@@ -338,8 +315,9 @@
         max-height: 3rem;
       }
     }
-    
-    input.error-state, textarea.error-state {
+
+    input.error-state,
+    textarea.error-state {
       border: red 1px solid;
       outline: red;
     }
@@ -355,9 +333,7 @@
 
 .comments {
   color: $color-text-primary-black;
-  @include mobile {
-    @include font-mobile-body-copy();
-  }
+  @include font-mobile-body-copy();
 
   @include tablet {
     @include font-desktop-body-copy();
@@ -368,16 +344,14 @@
     border-top: 1px solid $color-text-secondary-mercury;
     &:last-child {
       border-bottom: 1px solid $color-text-secondary-mercury;
-      @include mobile {
-        margin-bottom: 1rem;
-      }
+      margin-bottom: 1rem;
+
       @include tablet {
         margin-bottom: 3rem;
       }
     }
-    @include mobile {
-      padding: 1rem 0;
-    }
+    padding: 1rem 0;
+
     @include tablet {
       padding: 2.25rem 0;
     }
@@ -403,10 +377,9 @@
   }
 
   &__logo {
-    @include mobile {
-      width: 2.25rem;
-      height: 2.25rem;
-    }
+    width: 2.25rem;
+    height: 2.25rem;
+
     @include tablet {
       width: 3rem;
       height: 3rem;
@@ -422,7 +395,8 @@
     font-weight: 400;
   }
 
-  &__like-logo, &__delete-logo {
+  &__like-logo,
+  &__delete-logo {
     border-radius: 3px;
     width: 2rem;
     height: 2rem;
@@ -441,16 +415,16 @@
     margin-top: 0.5rem;
   }
 
-  &__like-icon, &__delete-icon {
+  &__like-icon,
+  &__delete-icon {
     // padding-top: 0.5rem;
     &:hover {
       cursor: pointer;
     }
     height: 1rem;
   }
-  
+
   &__like-icon {
     margin-right: 1rem;
   }
 }
-

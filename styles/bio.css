@@ -26,12 +26,8 @@
 .hero {
   background: url(../assets/Images/hero-bio.jpg) top;
   background-size: cover;
+  height: 16rem;
   position: relative;
-}
-@media (min-width: 320px) {
-  .hero {
-    height: 16rem;
-  }
 }
 @media (min-width: 768px) {
   .hero {
@@ -61,17 +57,13 @@
   position: absolute;
   bottom: 50%;
   transform: translateY(50%);
-}
-@media (min-width: 320px) {
-  .hero h1 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    text-align: center;
-    color: #323232;
-    padding: 0 1rem;
-    color: #ffffff;
-  }
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #323232;
+  padding: 0 1rem;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .hero h1 {
@@ -98,16 +90,12 @@
 
 .bio h2 {
   margin: 0;
-}
-@media (min-width: 320px) {
-  .bio h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    color: #323232;
-    padding-bottom: 1rem;
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #323232;
+  padding-bottom: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .bio h2 {
@@ -132,12 +120,8 @@
 .bio__img {
   margin: auto;
   display: block;
-}
-@media (min-width: 320px) {
-  .bio__img {
-    padding-bottom: 1rem;
-    width: 90%;
-  }
+  padding-bottom: 1rem;
+  width: 90%;
 }
 @media (min-width: 768px) {
   .bio__img {
@@ -151,16 +135,14 @@
     width: 70%;
   }
 }
-@media (min-width: 320px) {
-  .bio h3 {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    color: #323232;
-    padding-bottom: 1rem;
-  }
+.bio h3 {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #323232;
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .bio h3 {
@@ -173,16 +155,14 @@
     padding-bottom: 1rem;
   }
 }
-@media (min-width: 320px) {
-  .bio h4 {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    color: #323232;
-    width: 90%;
-    padding-bottom: 1.5rem;
-    margin: 0 auto;
-  }
+.bio h4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #323232;
+  width: 90%;
+  padding-bottom: 1.5rem;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   .bio h4 {
@@ -198,21 +178,17 @@
 .bio__desc {
   display: flex;
   margin: auto;
+  width: 90%;
+  padding-bottom: 1.5rem;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #323232;
 }
-@media (min-width: 320px) {
-  .bio__desc {
-    width: 90%;
-    padding-bottom: 1.5rem;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #323232;
-  }
-  .bio__desc--paragraph1 {
-    padding: 0 0 1.5rem 0;
-  }
+.bio__desc--paragraph1 {
+  padding: 0 0 1.5rem 0;
 }
 @media (min-width: 768px) {
   .bio__desc {
@@ -235,15 +211,11 @@
 }
 .gallery h2 {
   margin: 0;
-}
-@media (min-width: 320px) {
-  .gallery h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    color: #323232;
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #323232;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .gallery h2 {
@@ -265,16 +237,12 @@
 }
 .gallery__container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-@media (min-width: 320px) {
-  .gallery__container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .gallery__container--img {
-    padding-bottom: 1.5rem;
-    width: 90%;
-  }
+.gallery__container--img {
+  padding-bottom: 1.5rem;
+  width: 90%;
 }
 @media (min-width: 768px) {
   .gallery__container {
@@ -303,13 +271,11 @@
   }
 }
 
-@media (min-width: 320px) {
-  .conversation {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #323232;
-  }
+.conversation {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .conversation {
@@ -321,15 +287,11 @@
 }
 .conversation h2 {
   margin: 0;
-}
-@media (min-width: 320px) {
-  .conversation h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    color: #323232;
-    padding: 1.5rem 1rem 0 1rem;
-  }
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #323232;
+  padding: 1.5rem 1rem 0 1rem;
 }
 @media (min-width: 768px) {
   .conversation h2 {
@@ -355,11 +317,7 @@
   align-items: center;
   color: #afafaf;
   margin: auto;
-}
-@media (min-width: 320px) {
-  .conversation__container {
-    width: 90%;
-  }
+  width: 90%;
 }
 @media (min-width: 768px) {
   .conversation__container {
@@ -378,16 +336,12 @@
   color: #FFFFFF;
   background-color: #323232;
   align-self: flex-end;
-}
-@media (min-width: 320px) {
-  .conversation__container .button {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
-    margin: 1rem 0;
-    padding: 0 1rem;
-    width: 100%;
-  }
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .conversation__container .button {
@@ -409,16 +363,12 @@
   justify-content: space-between;
 }
 .conversation__logo {
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   background: url(../assets/Images/Mohan-muruge.jpg);
   background-size: cover;
   margin: 0 1rem;
-}
-@media (min-width: 320px) {
-  .conversation__logo {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
 }
 @media (min-width: 768px) {
   .conversation__logo {
@@ -439,13 +389,9 @@
   color: #afafaf;
   text-transform: uppercase;
   margin: 1rem 0 4px 0;
-}
-@media (min-width: 320px) {
-  .conversation__input-container label {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
-  }
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .conversation__input-container label {
@@ -477,7 +423,8 @@
 .conversation__input-container textarea input {
   max-height: 3rem;
 }
-.conversation__input-container input.error-state, .conversation__input-container textarea.error-state {
+.conversation__input-container input.error-state,
+.conversation__input-container textarea.error-state {
   border: red 1px solid;
   outline: red;
 }
@@ -491,14 +438,10 @@
 
 .comments {
   color: #323232;
-}
-@media (min-width: 320px) {
-  .comments {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #323232;
-  }
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .comments {
@@ -512,23 +455,15 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #E1E1E1;
+  padding: 1rem 0;
 }
 .comments__container:last-child {
   border-bottom: 1px solid #E1E1E1;
-}
-@media (min-width: 320px) {
-  .comments__container:last-child {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .comments__container:last-child {
     margin-bottom: 3rem;
-  }
-}
-@media (min-width: 320px) {
-  .comments__container {
-    padding: 1rem 0;
   }
 }
 @media (min-width: 768px) {
@@ -553,15 +488,11 @@
   flex-direction: column;
 }
 .comments__logo {
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   background-color: #E1E1E1;
   margin: 0 1rem;
-}
-@media (min-width: 320px) {
-  .comments__logo {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
 }
 @media (min-width: 768px) {
   .comments__logo {
