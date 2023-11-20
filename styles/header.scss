@@ -13,13 +13,11 @@
 .main-nav {
   background-color: $color-text-primary-black;
   display: flex;
-  @include mobile {
-    @include font-mobile-body-copy();
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0 0 0;
-  }
+  @include font-mobile-body-copy();
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 0 0;
 
   @include tablet {
     @include font-desktop-body-copy();
@@ -47,9 +45,8 @@
     margin: 0;
     padding: 0;
     flex-basis: 1;
-    @include mobile {
-      width: 100%;
-    }
+    width: 100%;
+
     @include tablet {
       width: auto;
     }
@@ -69,12 +66,10 @@
       }
       text-decoration: none;
     }
-    @include mobile {
-      text-align: center;
-      width: 50%;
-      padding: 1rem 0;
-      margin: 0;
-    }
+    text-align: center;
+    width: 50%;
+    padding: 1rem 0;
+    margin: 0;
 
     @include tablet {
       text-align: start;
@@ -84,4 +79,3 @@
     }
   }
 }
-
