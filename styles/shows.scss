@@ -15,9 +15,8 @@
   color: #ffffff;
   background: url(../assets/Images/hero-shows.jpg) top;
   background-size: cover;
-  @include mobile {
-    height: 16rem;
-  }
+
+  height: 16rem;
 
   @include tablet {
     height: 30rem;
@@ -47,17 +46,15 @@
   }
 
   h1 {
-    @include mobile {
-      @include font-mobile-page-header();
-      padding: 0 1rem;
+    @include font-mobile-page-header();
+    padding: 0 1rem;
+    color: #ffffff;
+    text-align: left;
+    span {
+      @include font-mobile-section-header();
       color: #ffffff;
-      text-align: left;
-      span {
-        @include font-mobile-section-header();
-        color: #ffffff;
-      }
-      width: 90%;
     }
+    width: 90%;
     @include tablet {
       @include font-desktop-page-header();
       text-align: left;
@@ -82,11 +79,10 @@
   }
 
   h2 {
-    @include mobile {
-      @include font-mobile-sub-header();
-      padding: 0 1rem;
-      color: #ffffff;
-    }
+    @include font-mobile-sub-header();
+    padding: 0 1rem;
+    color: #ffffff;
+
     @include tablet {
       @include font-desktop-sub-header();
       color: #ffffff;
@@ -110,17 +106,14 @@
     &-container {
       width: 100%;
       display: flex;
-      @include mobile {
-        padding-right: 0;
-        flex-direction: column;
-        text-align: center;
-        iframe {
-          width: 90%;
-          height: 6rem;
-          align-self: center;
-        }
+      padding-right: 0;
+      flex-direction: column;
+      text-align: center;
+      iframe {
+        width: 90%;
+        height: 6rem;
+        align-self: center;
       }
-
       @include tablet {
         padding-right: 0;
         flex-direction: column;
@@ -155,12 +148,11 @@
 
 .shows {
   display: flex;
-  @include mobile {
-    flex-direction: column;
-    padding: 1rem 0;
-    @include font-mobile-body-copy();
-    justify-content: flex-start;
-  }
+  flex-direction: column;
+  padding: 1rem 0;
+  @include font-mobile-body-copy();
+  justify-content: flex-start;
+
   @include tablet {
     flex-direction: column;
     padding: 2.25rem 5%;
@@ -175,10 +167,9 @@
   }
 
   h2 {
-    @include mobile {
-      @include font-mobile-section-header();
-      padding: 0 1rem;
-    }
+    @include font-mobile-section-header();
+    padding: 0 1rem;
+
     @include tablet {
       @include font-desktop-section-header();
       padding: 0;
@@ -186,12 +177,8 @@
   }
 
   table {
-    @include mobile {
-      width: 100%;
-    }
-    @include tablet {
-      width: 100%;
-    }
+    width: 100%;
+
     @include desktop {
       width: 80%;
     }
@@ -218,20 +205,19 @@
       background-color: $color-text-secondary-mercury;
     }
 
-    @include mobile {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 0;
-      td.shows__table-title-venue,
-      td.shows__table-title-location,
-      td.shows__table-date,
-      td.shows__table-content,
-      th.shows__table-title-venue,
-      th.shows__table-title-location {
-        width: 100%;
-      }
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    td.shows__table-title-venue,
+    td.shows__table-title-location,
+    td.shows__table-date,
+    td.shows__table-content,
+    th.shows__table-title-venue,
+    th.shows__table-title-location {
+      width: 100%;
     }
+
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
@@ -261,11 +247,10 @@
       text-align: left;
       text-transform: uppercase;
       color: $color-text-primary-silver;
-      @include mobile {
-        @include font-mobile-labels-buttons();
-        width: 100%;
-        padding: 1rem 1rem 0;
-      }
+      @include font-mobile-labels-buttons();
+      width: 100%;
+      padding: 1rem 1rem 0;
+
       @include tablet {
         @include font-desktop-labels-buttons();
         width: 30%;
@@ -274,9 +259,7 @@
       font-weight: 400;
     }
     td {
-      @include mobile {
-        padding: 0 1rem;
-      }
+      padding: 0 1rem;
       @include tablet {
         padding: 0;
       }
@@ -284,9 +267,8 @@
   }
 
   .shows__table-title {
-    @include mobile {
-      display: none;
-    }
+    display: none;
+
     @include tablet {
       display: flex;
       &:hover {
@@ -308,11 +290,8 @@
     }
     @include font-desktop-labels-buttons();
     height: 40px;
-
-    @include mobile {
-      margin: 1rem 0;
-      width: 100%;
-    }
+    margin: 1rem 0;
+    width: 100%;
 
     @include tablet {
       margin: 0;
@@ -321,9 +300,7 @@
   }
 
   &__table {
-    @include mobile {
-      @include font-desktop-body-copy();
-    }
+    @include font-desktop-body-copy();
     @include tablet {
       @include font-desktop-body-copy();
     }
@@ -338,12 +315,9 @@
   }
 
   .switch-style {
-    @include mobile {
-      display: initial;
-    }
+    display: initial;
     @include tablet {
       display: none;
     }
   }
 }
-
