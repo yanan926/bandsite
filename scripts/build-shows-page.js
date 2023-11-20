@@ -1,5 +1,6 @@
 import BandSiteApi from "./bandSiteApi.js";
 
+//function used to get the shows from api and convert the timestamp attribute to a string to display date
 async function fetchShows() {
   const api = "c94e5d12-3048-42b5-8ccb-c0f67f3faeb0";
   const bandSiteApi = new BandSiteApi(api);
@@ -7,8 +8,6 @@ async function fetchShows() {
   showsList.forEach(show => show.date = new Date(show.date).toDateString())
   return showsList;
 }
-let arr = await fetchShows()
-console.log(arr)
 
 //function used to create th element with text and style
 function createTh(title, styleName, responsiveStyle) {
@@ -38,11 +37,13 @@ function createButtonTd() {
 }
 
 //function to create the table
-function buildTable() {
+async function buildTable() {
   let tableEl = document.querySelector("table");
-  for (let i = 0; i < arr.length; i++) {
+  //get the shows content from api
+  let shows = await fetchShows()
+  for (let i = 0; i < shows.length; i++) {
     let trEl = document.createElement("tr");
-    let {date, place, location} = arr[i]
+    let {date, place, location} = shows[i]
     trEl.appendChild(
       createTh("Date", "shows__table-title-date", "switch-style")
     );
@@ -74,5 +75,5 @@ function addTrClickEvent() {
   }
 }
 
-buildTable();
+await buildTable();
 addTrClickEvent();

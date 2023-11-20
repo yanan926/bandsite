@@ -25,7 +25,7 @@ function dateStringConvert(today = new Date()) {
   return formattedToday;
 }
 
-//a function used to render the array element as a li element
+//a function used to call the api, get the comments array and render the array element as a li element
 async function displayCommentList() {
   let commentsList = await bandSiteApi.getComments();
 
@@ -44,6 +44,7 @@ async function displayCommentList() {
     let logoContainerEl = document.createElement("div");
     logoContainerEl.classList.add("comments__icon-container");
 
+    //create the like icon element
     const likeLogoEl = createCommentElement("img", "", "comments__like-icon");
     likeLogoEl.src = "../assets/Icons/SVG/icon-like.svg";
 
@@ -52,6 +53,8 @@ async function displayCommentList() {
       "",
       "comments__delete-icon"
     );
+
+    //create the delete icon element
     deleteLogoEl.src = "../assets/Icons/SVG/icon-delete.svg";
     logoContainerEl.appendChild(likeLogoEl);
     logoContainerEl.appendChild(deleteLogoEl);
@@ -75,11 +78,13 @@ async function displayCommentList() {
 
     const commentDateEl = createCommentElement("h4", date, "comments__date");
 
+    //add the event listener to like icon
     likeLogoEl.addEventListener("click", async () => {
       const likesNumber = await bandSiteApi.addLike(id);
       (commentlikeEl.innerText = ` ${likesNumber} likes`), "comments__like";
     });
 
+    //add the event listener to the delete icon
     deleteLogoEl.addEventListener("click", async () => {
       await bandSiteApi.deleteComment(id);
       displayCommentList();

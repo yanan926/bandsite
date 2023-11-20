@@ -33,6 +33,7 @@ export class BandSiteApi {
     }
   }
 
+  //get all shows from api
   async getShows() {
     try {
       const response = await axios.get(
@@ -44,6 +45,7 @@ export class BandSiteApi {
     }
   }
 
+  //function to add likes to the comments, take comment id as the argument
   async addLike(id) {
     try {
       const response = await axios.put(
@@ -55,6 +57,7 @@ export class BandSiteApi {
     }
   }
 
+     //function to delete the comment, take comment id as the argument
   async deleteComment(id) {
     try {
       const response = await axios.delete(
