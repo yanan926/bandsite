@@ -46,7 +46,7 @@ async function displayCommentList() {
 
     //create the like icon element
     const likeLogoEl = createCommentElement("img", "", "comments__like-icon");
-    likeLogoEl.src = "../assets/Icons/SVG/icon-like.svg";
+    likeLogoEl.src = "./assets/Icons/SVG/icon-like.svg";
 
     const deleteLogoEl = createCommentElement(
       "img",
@@ -55,7 +55,7 @@ async function displayCommentList() {
     );
 
     //create the delete icon element
-    deleteLogoEl.src = "../assets/Icons/SVG/icon-delete.svg";
+    deleteLogoEl.src = "./assets/Icons/SVG/icon-delete.svg";
     logoContainerEl.appendChild(likeLogoEl);
     logoContainerEl.appendChild(deleteLogoEl);
 
